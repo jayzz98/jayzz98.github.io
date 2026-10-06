@@ -5,647 +5,579 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Jaykumar Kadao — Data Analyst & BI Developer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --bg:#0a0a0a;
-  --bg2:#111111;
-  --bg3:#1a1a1a;
-  --card:#161616;
-  --border:#242424;
-  --accent:#c8f135;
-  --accent2:#a8d420;
-  --text:#f0f0f0;
-  --muted:#888;
-  --muted2:#555;
+  --bg:#060608;
+  --surface:#0e0e12;
+  --surface2:#16161c;
+  --border:rgba(255,255,255,0.07);
+  --border2:rgba(255,255,255,0.12);
+  --accent:#6ee7b7;
+  --accent2:#34d399;
+  --accent-glow:rgba(110,231,183,0.15);
+  --pink:#f472b6;
+  --blue:#818cf8;
+  --text:#f1f1f3;
+  --muted:#888899;
+  --muted2:#444455;
 }
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden;line-height:1.6}
 ::selection{background:var(--accent);color:#000}
-::-webkit-scrollbar{width:4px}
-::-webkit-scrollbar-track{background:#111}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--bg)}
 ::-webkit-scrollbar-thumb{background:var(--accent);border-radius:2px}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,10,0.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.04)}
-.nav-logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;letter-spacing:-0.5px;color:var(--text)}
-.nav-logo span{color:var(--accent)}
-.nav-links{display:flex;gap:8px;align-items:center}
-.nav-links a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;padding:8px 16px;border-radius:100px;transition:all .2s}
-.nav-links a:hover{color:var(--text);background:var(--bg3)}
-.nav-cta{background:var(--accent)!important;color:#000!important;font-weight:600!important;padding:9px 20px!important}
-.nav-cta:hover{background:var(--accent2)!important;transform:translateY(-1px)}
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px;background:rgba(6,6,8,0.8);backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
+.logo{font-family:'Bricolage Grotesque',sans-serif;font-size:20px;font-weight:800;letter-spacing:-0.5px}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:4px}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;font-weight:500;padding:7px 14px;border-radius:8px;transition:.15s}
+.nav-links a:hover{color:var(--text);background:var(--surface2)}
+.nav-hire{background:var(--accent)!important;color:#000!important;font-weight:700!important;padding:7px 18px!important;border-radius:8px!important}
+.nav-hire:hover{background:var(--accent2)!important;transform:translateY(-1px)}
 
-/* HERO */
-.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding:120px 40px 80px;max-width:1300px;margin:0 auto;gap:80px;align-items:center}
-.hero-left{}
-.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(200,241,53,0.08);border:1px solid rgba(200,241,53,0.2);color:var(--accent);font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:8px 16px;border-radius:100px;margin-bottom:32px}
-.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(48px,5vw,72px);font-weight:700;line-height:1.05;letter-spacing:-2px;margin-bottom:24px}
-.hero h1 em{font-style:normal;color:var(--accent)}
-.hero-bio{font-size:17px;color:var(--muted);line-height:1.7;max-width:480px;margin-bottom:40px}
-.hero-bio strong{color:var(--text)}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn-primary{background:var(--accent);color:#000;font-weight:700;font-size:15px;padding:14px 28px;border-radius:12px;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
-.btn-primary:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 8px 32px rgba(200,241,53,0.25)}
-.btn-outline{border:1px solid var(--border);color:var(--text);font-weight:500;font-size:15px;padding:14px 28px;border-radius:12px;text-decoration:none;transition:all .2s}
-.btn-outline:hover{border-color:var(--muted2);background:var(--bg3)}
-.hero-right{display:flex;flex-direction:column;gap:16px}
-.hero-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px}
-.hero-card-label{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-.hero-card-value{font-size:28px;font-weight:700;color:var(--accent)}
-.hero-card-sub{font-size:13px;color:var(--muted);margin-top:4px}
-.hero-cards-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
-.status-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px}
-.status-dot{width:8px;height:8px;background:#22c55e;border-radius:50%;display:inline-block;margin-right:8px;animation:pulse 2s infinite}
-.status-text{font-size:14px;font-weight:500}
-.tech-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-.tag{background:var(--bg3);border:1px solid var(--border);color:var(--muted);font-size:12px;font-weight:500;padding:5px 12px;border-radius:100px}
-.tag.accent{background:rgba(200,241,53,0.1);border-color:rgba(200,241,53,0.3);color:var(--accent)}
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 24px 60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(110,231,183,0.06) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:860px;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(110,231,183,0.08);border:1px solid rgba(110,231,183,0.2);color:var(--accent);font-size:12px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;padding:7px 16px;border-radius:100px;margin-bottom:36px}
+.pulse{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.85)}}
+.hero h1{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(52px,7vw,88px);font-weight:800;line-height:1.0;letter-spacing:-3px;margin-bottom:24px}
+.hero h1 .line2{color:var(--accent)}
+.hero-sub{font-size:18px;color:var(--muted);max-width:560px;margin:0 auto 48px;line-height:1.7}
+.hero-sub strong{color:var(--text)}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:var(--accent);color:#000;font-weight:700;font-size:14px;padding:14px 28px;border-radius:10px;text-decoration:none;transition:.2s;display:inline-flex;align-items:center;gap:8px}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 12px 40px rgba(110,231,183,0.25)}
+.btn-ghost{border:1px solid var(--border2);color:var(--text);font-size:14px;font-weight:500;padding:14px 28px;border-radius:10px;text-decoration:none;transition:.2s}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.hero-stats{display:flex;justify-content:center;gap:0;margin-top:72px;border:1px solid var(--border);border-radius:16px;overflow:hidden;background:var(--surface)}
+.stat{padding:24px 48px;text-align:center;border-right:1px solid var(--border)}
+.stat:last-child{border-right:none}
+.stat-num{font-family:'Bricolage Grotesque',sans-serif;font-size:32px;font-weight:800;color:var(--accent);letter-spacing:-1px}
+.stat-label{font-size:12px;color:var(--muted);margin-top:4px;font-weight:500;letter-spacing:.3px}
 
-/* SECTION */
-section{padding:100px 40px;max-width:1300px;margin:0 auto}
-.section-eyebrow{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
-.section-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(32px,4vw,52px);font-weight:700;letter-spacing:-1.5px;margin-bottom:24px;line-height:1.1}
-.section-title em{font-style:normal;color:var(--muted2)}
-.divider{width:100%;height:1px;background:var(--border);margin:0 40px;max-width:calc(100% - 80px)}
+/* ── SECTIONS ── */
+section{padding:100px 48px;max-width:1200px;margin:0 auto}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.section-title{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(36px,4vw,52px);font-weight:800;letter-spacing:-2px;line-height:1.05;margin-bottom:16px}
+.section-sub{font-size:16px;color:var(--muted);max-width:540px;margin-bottom:60px}
+.sep{width:100%;height:1px;background:var(--border);margin:0 48px;max-width:calc(100% - 96px)}
 
-/* EXPERIENCE */
-.exp-grid{display:grid;grid-template-columns:300px 1fr;gap:64px;margin-top:64px}
-.exp-timeline{display:flex;flex-direction:column;gap:4px}
-.exp-item{padding:16px 20px;border-radius:12px;cursor:pointer;transition:all .2s;border:1px solid transparent}
-.exp-item:hover,.exp-item.active{background:var(--card);border-color:var(--border)}
-.exp-item.active .exp-role{color:var(--accent)}
-.exp-date{font-size:12px;color:var(--muted);margin-bottom:4px;font-weight:500}
-.exp-role{font-size:15px;font-weight:600;color:var(--text);margin-bottom:2px;transition:color .2s}
-.exp-company{font-size:13px;color:var(--muted)}
-.exp-detail{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:40px;display:none}
-.exp-detail.active{display:block}
-.exp-detail h3{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;letter-spacing:-0.5px;margin-bottom:8px}
-.exp-detail .meta{font-size:13px;color:var(--muted);margin-bottom:28px;display:flex;gap:16px;flex-wrap:wrap}
-.exp-detail .meta span{display:flex;align-items:center;gap:6px}
-.exp-achievements{list-style:none;display:flex;flex-direction:column;gap:16px}
-.exp-achievements li{display:flex;gap:12px;font-size:15px;color:var(--muted);line-height:1.6}
-.exp-achievements li::before{content:'▸';color:var(--accent);flex-shrink:0;margin-top:2px;font-size:12px}
-.exp-achievements strong{color:var(--text)}
-.exp-skills{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px}
+/* ── EXPERIENCE ── */
+.exp-tabs{display:flex;gap:4px;margin-bottom:32px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:6px}
+.exp-tab{padding:10px 20px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:500;color:var(--muted);transition:.2s;border:none;background:none}
+.exp-tab.active{background:var(--surface2);color:var(--text);border:1px solid var(--border2)}
+.exp-panel{display:none;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:40px}
+.exp-panel.active{display:block}
+.exp-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px;flex-wrap:wrap;gap:16px}
+.exp-title{font-family:'Bricolage Grotesque',sans-serif;font-size:22px;font-weight:700;margin-bottom:4px}
+.exp-co{font-size:14px;color:var(--accent);font-weight:600}
+.exp-period{font-size:12px;color:var(--muted);background:var(--surface2);border:1px solid var(--border);padding:6px 14px;border-radius:100px;white-space:nowrap}
+.exp-list{list-style:none;display:flex;flex-direction:column;gap:14px}
+.exp-list li{display:flex;gap:12px;font-size:14px;color:var(--muted);line-height:1.65}
+.exp-list li::before{content:'▸';color:var(--accent);flex-shrink:0;margin-top:3px;font-size:11px}
+.exp-list li strong{color:var(--text)}
+.skill-chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:24px;padding-top:24px;border-top:1px solid var(--border)}
+.chip{background:var(--surface2);border:1px solid var(--border);color:var(--muted);font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;letter-spacing:.3px}
+.chip.hi{background:rgba(110,231,183,0.08);border-color:rgba(110,231,183,0.25);color:var(--accent)}
 
-/* PROJECTS */
-.projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:64px}
-.project-card{background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:all .3s;position:relative}
-.project-card:hover{border-color:rgba(200,241,53,0.3);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.4)}
-.project-card.featured{grid-column:1/-1}
-.project-img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:var(--bg3)}
-.project-img-placeholder{width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,var(--bg3) 0%,var(--bg2) 100%);display:flex;align-items:center;justify-content:center;font-size:48px}
-.project-body{padding:28px}
-.project-type{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
-.project-title{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;letter-spacing:-0.5px;margin-bottom:12px;line-height:1.2}
-.project-desc{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:20px}
-.project-meta{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-.project-tools{display:flex;gap:6px;flex-wrap:wrap}
-.tool-tag{background:var(--bg3);border:1px solid var(--border);color:var(--muted);font-size:11px;font-weight:600;padding:4px 10px;border-radius:6px;letter-spacing:0.3px}
-.project-links{display:flex;gap:8px}
-.project-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--text);text-decoration:none;padding:8px 16px;border:1px solid var(--border);border-radius:8px;transition:all .2s}
-.project-link:hover{border-color:var(--accent);color:var(--accent)}
-.project-link.filled{background:var(--accent);color:#000;border-color:var(--accent)}
-.project-link.filled:hover{background:var(--accent2)}
+/* ── PROJECTS ── */
+/* Featured card */
+.featured-project{background:var(--surface);border:1px solid var(--border);border-radius:24px;overflow:hidden;margin-bottom:24px;display:grid;grid-template-columns:1fr 1fr;min-height:440px;transition:.3s}
+.featured-project:hover{border-color:var(--border2);box-shadow:0 24px 80px rgba(0,0,0,0.5)}
+.fp-img{position:relative;overflow:hidden}
+.fp-img img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .5s}
+.featured-project:hover .fp-img img{transform:scale(1.03)}
+.fp-img-overlay{position:absolute;inset:0;background:linear-gradient(to right,transparent 60%,var(--surface));pointer-events:none}
+.fp-body{padding:48px 48px 48px 40px;display:flex;flex-direction:column;justify-content:center}
+.fp-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.fp-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.fp-title{font-family:'Bricolage Grotesque',sans-serif;font-size:28px;font-weight:800;letter-spacing:-1px;margin-bottom:16px;line-height:1.15}
+.fp-desc{font-size:14px;color:var(--muted);line-height:1.75;margin-bottom:28px}
+.fp-tools{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:28px}
+.tool{background:var(--surface2);border:1px solid var(--border);color:var(--muted);font-size:11px;font-weight:600;padding:4px 11px;border-radius:6px;letter-spacing:.2px}
+.fp-links{display:flex;gap:10px}
+.proj-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--text);text-decoration:none;padding:9px 18px;border:1px solid var(--border2);border-radius:8px;transition:.2s}
+.proj-link:hover{border-color:var(--accent);color:var(--accent)}
+.proj-link.filled{background:var(--accent);color:#000;border-color:var(--accent)}
+.proj-link.filled:hover{background:var(--accent2)}
 
-/* SKILLS */
-.skills-container{margin-top:64px;display:grid;grid-template-columns:1fr 1fr;gap:40px}
-.skill-group h3{font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
-.skill-row{margin-bottom:20px}
-.skill-top{display:flex;justify-content:space-between;margin-bottom:8px}
-.skill-name{font-size:14px;font-weight:600;color:var(--text)}
-.skill-pct{font-size:13px;font-weight:700;color:var(--accent)}
-.skill-bar{height:6px;background:var(--bg3);border-radius:100px;overflow:hidden}
-.skill-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:100px;transition:width 1.5s cubic-bezier(.22,.68,0,1.2)}
+/* Grid cards */
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.proj-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:.3s;cursor:default}
+.proj-card:hover{border-color:var(--border2);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.4)}
+.pc-img{width:100%;aspect-ratio:16/9;overflow:hidden;background:var(--surface2)}
+.pc-img img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .4s}
+.proj-card:hover .pc-img img{transform:scale(1.05)}
+.pc-placeholder{width:100%;aspect-ratio:16/9;background:var(--surface2);display:flex;align-items:center;justify-content:center}
+.pc-client-img{width:100%;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;gap:16px;padding:32px}
+.pc-body{padding:24px}
+.pc-type{font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.pc-type.client{color:var(--pink)}
+.pc-title{font-family:'Bricolage Grotesque',sans-serif;font-size:17px;font-weight:700;letter-spacing:-.4px;margin-bottom:10px;line-height:1.25}
+.pc-desc{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:16px}
+.pc-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.pc-tools{display:flex;gap:5px;flex-wrap:wrap}
+.pc-tool{background:var(--surface2);border:1px solid var(--border);color:var(--muted2);font-size:10px;font-weight:600;padding:3px 9px;border-radius:5px}
+.pc-link{font-size:12px;font-weight:600;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:6px 12px;border-radius:7px;transition:.2s;white-space:nowrap}
+.pc-link:hover{color:var(--accent);border-color:var(--accent)}
 
-/* CERTS */
-.certs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
-.cert-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;transition:all .2s}
-.cert-card:hover{border-color:rgba(200,241,53,0.3)}
-.cert-icon{font-size:28px;margin-bottom:12px}
-.cert-name{font-size:15px;font-weight:600;margin-bottom:6px;line-height:1.3}
-.cert-issuer{font-size:13px;color:var(--muted)}
-.cert-date{font-size:12px;color:var(--accent);margin-top:8px;font-weight:600}
+/* ── SKILLS ── */
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.skill-cat-title{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
+.skill-bar-row{margin-bottom:18px}
+.skill-bar-top{display:flex;justify-content:space-between;margin-bottom:7px}
+.skill-name{font-size:13px;font-weight:600}
+.skill-pct{font-size:12px;font-weight:700;color:var(--accent)}
+.skill-track{height:5px;background:var(--surface2);border-radius:100px;overflow:hidden}
+.skill-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--blue));border-radius:100px;width:0;transition:width 1.4s cubic-bezier(.22,.68,0,1.2)}
 
-/* CONTACT */
-.contact-wrap{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:64px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:64px}
-.contact-left h2{font-family:'Space Grotesk',sans-serif;font-size:40px;font-weight:700;letter-spacing:-1px;margin-bottom:16px}
-.contact-left h2 em{font-style:normal;color:var(--accent)}
-.contact-left p{font-size:16px;color:var(--muted);line-height:1.7;margin-bottom:32px}
-.contact-links{display:flex;flex-direction:column;gap:12px}
-.contact-link{display:flex;align-items:center;gap:16px;padding:16px 20px;background:var(--bg);border:1px solid var(--border);border-radius:12px;text-decoration:none;transition:all .2s}
-.contact-link:hover{border-color:rgba(200,241,53,0.3);transform:translateX(4px)}
-.contact-link-icon{width:40px;height:40px;background:var(--bg3);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
-.contact-link-text .label{font-size:12px;color:var(--muted);font-weight:500;margin-bottom:2px}
-.contact-link-text .val{font-size:14px;color:var(--text);font-weight:600}
-.contact-right{display:flex;flex-direction:column;gap:16px}
-.fact-card{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:20px;display:flex;gap:16px;align-items:center}
-.fact-num{font-size:32px;font-weight:800;color:var(--accent);line-height:1;flex-shrink:0}
-.fact-label{font-size:13px;color:var(--muted);line-height:1.5}
-.fact-label strong{color:var(--text);display:block;font-size:15px;margin-bottom:2px}
+/* ── CERTS ── */
+.certs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cert{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;transition:.2s}
+.cert:hover{border-color:var(--border2)}
+.cert-icon{font-size:24px;margin-bottom:12px}
+.cert-name{font-size:14px;font-weight:600;line-height:1.3;margin-bottom:6px}
+.cert-by{font-size:12px;color:var(--muted)}
+.cert-date{font-size:11px;color:var(--accent);margin-top:8px;font-weight:700}
 
-/* FOOTER */
-footer{border-top:1px solid var(--border);padding:32px 40px;display:flex;align-items:center;justify-content:space-between;max-width:1300px;margin:0 auto}
-footer p{font-size:13px;color:var(--muted2)}
-footer a{color:var(--muted);font-size:13px;text-decoration:none;margin-left:16px;transition:color .2s}
-footer a:hover{color:var(--accent)}
+/* ── CONTACT ── */
+.contact-wrap{background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:64px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.contact-title{font-family:'Bricolage Grotesque',sans-serif;font-size:42px;font-weight:800;letter-spacing:-2px;line-height:1.05;margin-bottom:16px}
+.contact-title em{font-style:normal;color:var(--accent)}
+.contact-sub{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:36px}
+.clink{display:flex;align-items:center;gap:14px;text-decoration:none;padding:14px 18px;border:1px solid var(--border);border-radius:12px;background:var(--surface2);margin-bottom:10px;transition:.2s}
+.clink:hover{border-color:var(--accent);transform:translateX(4px)}
+.clink-icon{width:38px;height:38px;border-radius:9px;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.clink-text .lbl{font-size:11px;color:var(--muted);font-weight:500}
+.clink-text .val{font-size:13px;font-weight:600}
+.fact-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fact{background:var(--surface2);border:1px solid var(--border);border-radius:14px;padding:20px}
+.fact-num{font-family:'Bricolage Grotesque',sans-serif;font-size:34px;font-weight:800;color:var(--accent);line-height:1;margin-bottom:6px}
+.fact-label{font-size:12px;color:var(--muted)}
+.fact-label strong{display:block;color:var(--text);font-size:13px;margin-bottom:2px}
 
-/* RESPONSIVE */
-@media(max-width:900px){
-  .hero{grid-template-columns:1fr;padding-top:100px}
-  .hero-right{display:none}
-  .exp-grid{grid-template-columns:1fr}
-  .projects-grid,.skills-container,.certs-grid,.contact-wrap{grid-template-columns:1fr}
-  .project-card.featured{grid-column:auto}
-  nav{padding:16px 20px}
-  section,footer{padding:60px 20px}
-  .contact-wrap{padding:32px 24px}
+footer{border-top:1px solid var(--border);padding:28px 48px;display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto}
+footer p{font-size:12px;color:var(--muted2)}
+.footer-links{display:flex;gap:20px}
+.footer-links a{font-size:12px;color:var(--muted);text-decoration:none;transition:.15s}
+.footer-links a:hover{color:var(--accent)}
+
+@media(max-width:1024px){
+  .featured-project{grid-template-columns:1fr}
+  .proj-grid{grid-template-columns:1fr 1fr}
+  .certs-grid{grid-template-columns:1fr 1fr}
 }
-@media(max-width:600px){
-  .hero{padding:90px 20px 60px}
-  .hero h1{font-size:38px}
+@media(max-width:768px){
+  nav{padding:0 20px}
+  section{padding:70px 20px}
+  .proj-grid{grid-template-columns:1fr}
+  .contact-wrap{grid-template-columns:1fr;padding:32px 24px}
+  .skills-grid{grid-template-columns:1fr}
+  .hero-stats{flex-direction:column}
+  .stat{border-right:none;border-bottom:1px solid var(--border)}
+  footer{padding:20px;flex-direction:column;gap:12px;text-align:center}
 }
 
-/* ANIMATIONS */
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-.animate{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
-.animate.visible{opacity:1;transform:translateY(0)}
+.fade-up{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
+.fade-up.in{opacity:1;transform:translateY(0)}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <div class="nav-logo">Jay<span>.</span></div>
+  <div class="logo">Jay<span>.</span></div>
   <div class="nav-links">
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
-    <a href="#contact" class="nav-cta">Hire Me</a>
+    <a href="#contact" class="nav-hire">Hire Me</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-left">
-    <div class="hero-tag">
-      <span style="width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite"></span>
-      Open to opportunities
-    </div>
-    <h1>Jaykumar<br/><em>Kadao</em></h1>
-    <p class="hero-bio">
-      <strong>Associate Data Analyst</strong> at InCredo Technologies — migrating enterprise BI systems, shipping production dashboards for <strong>Warner Bros. Discovery</strong> & <strong>J&J MedTech</strong>, and building LLM-powered tools that cut delivery time by 98%.
+  <div class="hero-inner">
+    <div class="hero-badge"><span class="pulse"></span> Open to New Roles</div>
+    <h1>
+      Jaykumar Kadao<br/>
+      <span class="line2">Data Analyst</span>
+    </h1>
+    <p class="hero-sub">
+      Turning enterprise data into <strong>decisions</strong> — Power BI migrations for <strong>Warner Bros. Discovery</strong>, AI-powered tools that cut delivery time by <strong>98%</strong>, and production dashboards for <strong>J&amp;J MedTech</strong>.
     </p>
     <div class="hero-btns">
-      <a href="#projects" class="btn-primary">View Work ↓</a>
-      <a href="mailto:jaykadao99210@gmail.com" class="btn-outline">Get in Touch</a>
+      <a href="#projects" class="btn-primary">View Projects ↓</a>
+      <a href="mailto:jaykadao99210@gmail.com" class="btn-ghost">Get in Touch</a>
     </div>
-  </div>
-  <div class="hero-right">
-    <div class="hero-cards-row">
-      <div class="hero-card">
-        <div class="hero-card-label">Clients</div>
-        <div class="hero-card-value">3+</div>
-        <div class="hero-card-sub">WBD, J&J, Others</div>
-      </div>
-      <div class="hero-card">
-        <div class="hero-card-label">Reports</div>
-        <div class="hero-card-value">15+</div>
-        <div class="hero-card-sub">Migrated to Power BI</div>
-      </div>
-      <div class="hero-card">
-        <div class="hero-card-label">Time Saved</div>
-        <div class="hero-card-value">98%</div>
-        <div class="hero-card-sub">Via AI automation</div>
-      </div>
-    </div>
-    <div class="status-card">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
-        <div style="font-size:14px;font-weight:600"><span class="status-dot"></span>Currently Working</div>
-        <div style="font-size:12px;color:var(--muted)">Nagpur, India</div>
-      </div>
-      <div style="font-size:13px;color:var(--muted)">InCredo Technologies · Associate Analyst</div>
-      <div class="tech-tags" style="margin-top:16px">
-        <span class="tag accent">Power BI</span>
-        <span class="tag accent">DAX</span>
-        <span class="tag">SQL</span>
-        <span class="tag">LangChain</span>
-        <span class="tag">NVIDIA NIM</span>
-        <span class="tag">Python</span>
-      </div>
-    </div>
-    <div class="hero-card">
-      <div class="hero-card-label">Education</div>
-      <div style="font-size:16px;font-weight:700;margin-bottom:4px">B.Tech · Biomedical Engineering</div>
-      <div style="font-size:13px;color:var(--muted)">RCOEM Nagpur · CGPA 7.45 · 2025</div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">15+</div><div class="stat-label">Reports Migrated</div></div>
+      <div class="stat"><div class="stat-num">98%</div><div class="stat-label">Time Saved via AI</div></div>
+      <div class="stat"><div class="stat-num">6+</div><div class="stat-label">Dashboards Shipped</div></div>
+      <div class="stat"><div class="stat-num">100%</div><div class="stat-label">UAT Sign-off Rate</div></div>
     </div>
   </div>
 </div>
 
-<div class="divider"></div>
+<div class="sep"></div>
 
 <!-- EXPERIENCE -->
-<section id="experience" class="animate">
-  <div class="section-eyebrow">Career</div>
-  <div class="section-title">Work <em>Experience</em></div>
+<section id="experience" class="fade-up">
+  <div class="eyebrow">Career</div>
+  <div class="section-title">Work Experience</div>
+  <p class="section-sub">Full-time at InCredo Technologies since 2025 — from SQL scripting to enterprise BI migrations and LLM-powered automation.</p>
 
-  <div class="exp-grid">
-    <div class="exp-timeline">
-      <div class="exp-item active" onclick="showExp(0,this)">
-        <div class="exp-date">Dec 2025 – Present</div>
-        <div class="exp-role">Associate Analyst</div>
-        <div class="exp-company">InCredo Technologies</div>
-      </div>
-      <div class="exp-item" onclick="showExp(1,this)">
-        <div class="exp-date">Sep – Dec 2025</div>
-        <div class="exp-role">Data Analyst Intern</div>
-        <div class="exp-company">InCredo Technologies</div>
-      </div>
-      <div class="exp-item" onclick="showExp(2,this)">
-        <div class="exp-date">Jun – Jul 2025</div>
-        <div class="exp-role">SQL Intern</div>
-        <div class="exp-company">InCredo Technologies</div>
-      </div>
-    </div>
+  <div class="exp-tabs">
+    <button class="exp-tab active" onclick="showTab(0,this)">Associate Analyst · Now</button>
+    <button class="exp-tab" onclick="showTab(1,this)">Data Analyst Intern</button>
+    <button class="exp-tab" onclick="showTab(2,this)">SQL Intern</button>
+  </div>
 
-    <div id="exp-0" class="exp-detail active">
-      <h3>Associate Analyst</h3>
-      <div class="meta">
-        <span>🏢 InCredo Technologies</span>
-        <span>📍 Nagpur, Maharashtra</span>
-        <span>📅 Dec 2025 – Present</span>
+  <div id="tab-0" class="exp-panel active">
+    <div class="exp-header">
+      <div>
+        <div class="exp-title">Associate Analyst</div>
+        <div class="exp-co">InCredo Technologies · Nagpur, MH</div>
       </div>
-      <ul class="exp-achievements">
-        <li>Led <strong>SAP BusinessObjects → Power BI migration</strong> for Warner Bros. Discovery, rebuilding 15+ reports & 4 dashboards through DAX authoring, SQL profiling, and row-level reconciliation — achieving <strong>zero-defect UAT sign-off</strong>.</li>
-        <li>Replaced manual reporting for <strong>J&J MedTech</strong> with 2 production Power BI dashboards, then engineered an <strong>LLM-powered Auto Insight Generator</strong> (NVIDIA NIM + LangChain) cutting client delivery from 3 hours → <strong>under 2 minutes (98% reduction)</strong>.</li>
-        <li>Applied AI-assisted prototyping and generative design tools to accelerate dashboard ideation, translating ambiguous briefs into validated specs ahead of review timelines.</li>
-      </ul>
-      <div class="exp-skills">
-        <span class="tag accent">Power BI</span><span class="tag accent">DAX</span><span class="tag">SQL Server</span><span class="tag">LangChain</span><span class="tag">NVIDIA NIM</span><span class="tag">Power Query</span><span class="tag">SAP BO</span>
-      </div>
+      <div class="exp-period">Dec 2025 – Present</div>
     </div>
-    <div id="exp-1" class="exp-detail">
-      <h3>Data Analyst Intern</h3>
-      <div class="meta">
-        <span>🏢 InCredo Technologies</span>
-        <span>📍 Nagpur, Maharashtra</span>
-        <span>📅 Sep – Dec 2025</span>
-      </div>
-      <ul class="exp-achievements">
-        <li>Owned the full reporting pipeline — SQL extraction through stakeholder-approved publication — shipping <strong>10+ dashboards</strong> across Power BI, Tableau, and MicroStrategy.</li>
-        <li>Validated ETL queries across <strong>MySQL and SQL Server</strong>, running EDA on enterprise datasets to surface anomalies pre-release — directly improving output accuracy for downstream reporting.</li>
-        <li>Embedded AI-powered pattern-recognition and anomaly-flagging techniques into EDA workflows, accelerating identification of data irregularities across high-volume datasets.</li>
-      </ul>
-      <div class="exp-skills">
-        <span class="tag accent">Power BI</span><span class="tag accent">Tableau</span><span class="tag">MicroStrategy</span><span class="tag">MySQL</span><span class="tag">SQL Server</span><span class="tag">EDA</span>
-      </div>
+    <ul class="exp-list">
+      <li>Led <strong>SAP BusinessObjects → Power BI migration</strong> for Warner Bros. Discovery — rebuilt 15+ reports and 4 dashboards via DAX authoring, SQL profiling, and row-level reconciliation achieving <strong>zero-defect UAT sign-off</strong> and unblocking a coordinated overseas go-live.</li>
+      <li>Replaced manual reporting for <strong>J&amp;J MedTech</strong> with 2 production Power BI dashboards, then engineered an <strong>LLM-powered Auto Insight Generator</strong> (NVIDIA NIM + LangChain) — cutting client delivery from 3 hours to <strong>under 2 minutes (98% reduction)</strong>.</li>
+      <li>Applied <strong>AI-assisted prototyping</strong> and generative design tools to accelerate dashboard ideation, translating ambiguous briefs into validated visual specs ahead of traditional review timelines.</li>
+    </ul>
+    <div class="skill-chips">
+      <span class="chip hi">Power BI</span><span class="chip hi">DAX</span><span class="chip hi">LangChain</span><span class="chip hi">NVIDIA NIM</span><span class="chip">SAP BO</span><span class="chip">Power Query</span><span class="chip">SQL Server</span><span class="chip">RLS</span>
     </div>
-    <div id="exp-2" class="exp-detail">
-      <h3>SQL Intern</h3>
-      <div class="meta">
-        <span>🏢 InCredo Technologies</span>
-        <span>📍 Nagpur, Maharashtra</span>
-        <span>📅 Jun – Jul 2025</span>
+  </div>
+  <div id="tab-1" class="exp-panel">
+    <div class="exp-header">
+      <div>
+        <div class="exp-title">Data Analyst Intern</div>
+        <div class="exp-co">InCredo Technologies · Nagpur, MH</div>
       </div>
-      <ul class="exp-achievements">
-        <li>Authored SQL scripts (joins, aggregations, subqueries) to pull and transform data from relational databases, feeding <strong>3+ business-facing reports</strong>; resolved query bottlenecks improving accuracy and delivery speed.</li>
-        <li>Leveraged <strong>GitHub Copilot</strong> to accelerate query drafting, minimize syntax errors, and surface optimized join strategies — shortening development cycles for complex multi-table transformations.</li>
-        <li>Produced a <strong>parameterized SQL template library</strong> and extraction best-practices guide, eliminating redundant scripting and establishing a repeatable standard.</li>
-      </ul>
-      <div class="exp-skills">
-        <span class="tag accent">SQL</span><span class="tag">MySQL</span><span class="tag">Joins</span><span class="tag">Subqueries</span><span class="tag">GitHub Copilot</span>
+      <div class="exp-period">Sep 2025 – Dec 2025</div>
+    </div>
+    <ul class="exp-list">
+      <li>Owned the full reporting pipeline — SQL extraction through stakeholder-approved publication — shipping <strong>10+ dashboards</strong> across Power BI, Tableau, and MicroStrategy.</li>
+      <li>Validated ETL queries across <strong>MySQL and SQL Server</strong>, running EDA on enterprise datasets to surface anomalies pre-release — directly improving output accuracy for downstream reporting.</li>
+      <li>Embedded <strong>AI-powered anomaly-flagging</strong> techniques into EDA workflows, accelerating identification of data irregularities across high-volume datasets and reducing manual inspection cycles.</li>
+    </ul>
+    <div class="skill-chips">
+      <span class="chip hi">Power BI</span><span class="chip hi">Tableau</span><span class="chip hi">MicroStrategy</span><span class="chip">MySQL</span><span class="chip">SQL Server</span><span class="chip">EDA</span><span class="chip">ETL</span>
+    </div>
+  </div>
+  <div id="tab-2" class="exp-panel">
+    <div class="exp-header">
+      <div>
+        <div class="exp-title">SQL Intern</div>
+        <div class="exp-co">InCredo Technologies · Nagpur, MH</div>
       </div>
+      <div class="exp-period">Jun 2025 – Jul 2025</div>
+    </div>
+    <ul class="exp-list">
+      <li>Authored SQL scripts (joins, aggregations, subqueries) to pull and transform data from relational databases, feeding <strong>3+ business-facing reports</strong>; resolved query bottlenecks improving accuracy and delivery speed.</li>
+      <li>Leveraged <strong>GitHub Copilot</strong> to accelerate query drafting, minimize syntax errors, and surface optimized join strategies — shortening development cycles for complex multi-table transformations.</li>
+      <li>Produced a <strong>parameterized SQL template library</strong> and extraction best-practices guide, eliminating redundant scripting and establishing a repeatable standard for the team.</li>
+    </ul>
+    <div class="skill-chips">
+      <span class="chip hi">SQL</span><span class="chip hi">MySQL</span><span class="chip">Joins &amp; Subqueries</span><span class="chip">Aggregations</span><span class="chip">GitHub Copilot</span>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
+<div class="sep"></div>
 
 <!-- PROJECTS -->
-<section id="projects" class="animate">
-  <div class="section-eyebrow">Work</div>
-  <div class="section-title">Featured <em>Projects</em></div>
-  <div class="projects-grid">
+<section id="projects" class="fade-up">
+  <div class="eyebrow">Work</div>
+  <div class="section-title">Featured Projects</div>
+  <p class="section-sub">AI tools, enterprise BI migrations, and data dashboards — built and shipped in production.</p>
 
-    <!-- DATA LIE DETECTOR - FEATURED -->
-    <div class="project-card featured">
-      <img src="assets/dld_hero.png" alt="Data Lie Detector - Hero" class="project-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-      <div class="project-img-placeholder" style="display:none">🔍</div>
-      <div class="project-body">
-        <div class="project-type">🚀 Personal Product · Live on Web</div>
-        <div class="project-title">Data Lie Detector</div>
-        <div class="project-desc">Upload any CSV dataset and instantly receive AI-powered trust scores, anomaly detection, suspicious pattern analysis, and decision-safety verdicts. Features a 3-tier alert system, 15+ analysis modules, multi-file comparison, and PDF export — turning opaque data into confident, auditable decisions.</div>
-        <div style="margin:20px 0">
-          <img src="assets/dld_features.png" alt="Features" style="width:100%;border-radius:12px;border:1px solid var(--border);" onerror="this.style.display='none'"/>
-        </div>
-        <div class="project-meta">
-          <div class="project-tools">
-            <span class="tool-tag">Python</span>
-            <span class="tool-tag">Streamlit</span>
-            <span class="tool-tag">Pandas</span>
-            <span class="tool-tag">NumPy</span>
-            <span class="tool-tag">AI/ML</span>
-            <span class="tool-tag">Vercel</span>
-          </div>
-          <div class="project-links">
-            <a href="https://data-lie-detector.vercel.app" target="_blank" class="project-link filled">↗ Live Demo</a>
-            <a href="https://github.com/jayzz98/Data-Lie-Detector" target="_blank" class="project-link">⌥ GitHub</a>
-          </div>
-        </div>
+  <!-- ★ FEATURED: AI BI COPILOT ★ -->
+  <div class="featured-project">
+    <div class="fp-img">
+      <img src="assets/ai_insight_hero.png" alt="AI BI Copilot" onerror="this.parentNode.style.background='#1a1a2e';this.style.display='none'"/>
+      <div class="fp-img-overlay"></div>
+    </div>
+    <div class="fp-body">
+      <div class="fp-badge">Featured Project · AutoInsight · Aug 2025</div>
+      <div class="fp-title">AI BI Copilot —<br/>AutoInsight Generator</div>
+      <p class="fp-desc">LLM-powered analytics platform using NVIDIA NIM & LangChain across 4 data source types — CSV, SQL Server, MySQL, and live Power BI. Business users ask in plain English and get boardroom-ready insights in seconds. Deployed at J&amp;J MedTech, reducing delivery time from 3 hours to under 2 minutes.</p>
+      <div class="fp-tools">
+        <span class="tool">NVIDIA NIM</span><span class="tool">LangChain</span><span class="tool">Python</span><span class="tool">Streamlit</span><span class="tool">Power BI API</span><span class="tool">SQL Server</span>
+      </div>
+      <div class="fp-links">
+        <a href="https://github.com/jayzz98/ai-bi-copilot" target="_blank" class="proj-link">⌥ GitHub</a>
       </div>
     </div>
-
-    <!-- AI BI COPILOT -->
-    <div class="project-card">
-      <img src="assets/ai_app_screenshot.png" alt="AI BI Copilot" class="project-img" style="object-fit:cover;object-position:top;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-      <div class="project-img-placeholder" style="display:none">🤖</div>
-      <div class="project-body">
-        <div class="project-type">🤖 AutoInsight · Aug 2025</div>
-        <div class="project-title">AI BI Copilot — AutoInsight Generator</div>
-        <div class="project-desc">LLM-powered analytics platform integrating NVIDIA NIM & LangChain across 4 data source types (CSV, SQL Server, MySQL, live Power BI). Non-technical users ask questions in plain English — the engine returns AI-generated charts, insights, and summaries in seconds. Deployed at J&J MedTech, cutting report generation from 3 hours → &lt;2 minutes.</div>
-        <div class="project-meta">
-          <div class="project-tools">
-            <span class="tool-tag">NVIDIA NIM</span>
-            <span class="tool-tag">LangChain</span>
-            <span class="tool-tag">Python</span>
-            <span class="tool-tag">Streamlit</span>
-            <span class="tool-tag">Power BI API</span>
-            <span class="tool-tag">SQL Server</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/jayzz98/ai-bi-copilot" target="_blank" class="project-link">⌥ GitHub</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- J&J MEDTECH -->
-    <div class="project-card">
-      <div style="background:#fff;padding:40px;display:flex;align-items:center;justify-content:center;aspect-ratio:16/9;border-bottom:1px solid var(--border);">
-        <img src="assets/jnj_icon.png" alt="Johnson & Johnson" style="width:96px;height:96px;object-fit:contain;"/>
-        <h3 style="color:#e00;margin-left:16px;font-family:sans-serif;font-weight:900;letter-spacing:-0.5px;font-size:24px;">Johnson & Johnson</h3>
-      </div>
-      <div class="project-body">
-        <div class="project-type" style="color:#ff3366;font-weight:900;">★ CLIENT PROJECT · Mar – Jul 2026</div>
-        <div class="project-title">Johnson & Johnson MedTech Dashboards</div>
-        <div class="project-desc">Built 2 Power BI dashboards (D3&I Resource Management + Product Portfolio) tracking 6 KPI areas: resource capacity, SLA adherence, deployment performance, product health, releases, and budget. Enforced Row-Level Security (RLS) and role-based access controls for enterprise compliance.</div>
-        <div class="project-meta">
-          <div class="project-tools">
-            <span class="tool-tag">Power BI</span>
-            <span class="tool-tag">DAX</span>
-            <span class="tool-tag">Power Query</span>
-            <span class="tool-tag">RLS</span>
-            <span class="tool-tag">KPI Cards</span>
-          </div>
-          <div class="project-links">
-            <span class="project-link" style="cursor:default;opacity:.5">🔒 Confidential</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- WARNER BROS DISCOVERY -->
-    <div class="project-card">
-      <div style="background:#0033a0;padding:40px;display:flex;align-items:center;justify-content:center;aspect-ratio:16/9;border-bottom:1px solid #222;">
-        <img src="assets/wbd_icon.png" alt="Warner Bros. Discovery" style="width:96px;height:96px;object-fit:contain;filter:drop-shadow(0 4px 6px rgba(0,0,0,0.3));"/>
-        <div style="color:#fff;margin-left:16px;font-family:sans-serif;font-weight:900;letter-spacing:-0.5px;font-size:20px;line-height:1.1;">WARNER BROS.<br/>DISCOVERY</div>
-      </div>
-      <div class="project-body">
-        <div class="project-type" style="color:#ff3366;font-weight:900;">★ CLIENT PROJECT · Dec 2025 – Feb 2026</div>
-        <div class="project-title">Warner Bros. Discovery — BI Migration</div>
-        <div class="project-desc">Rebuilt 15+ SAP BusinessObjects reports and 4 dashboards in Power BI with new data models and Power Query transformations. Ran a 3-step validation (SQL profiling → cleansing → row-level reconciliation) achieving zero-defect UAT sign-off and unblocking a coordinated overseas go-live.</div>
-        <div class="project-meta">
-          <div class="project-tools">
-            <span class="tool-tag">Power BI</span>
-            <span class="tool-tag">SAP BO</span>
-            <span class="tool-tag">DAX</span>
-            <span class="tool-tag">SQL Profiling</span>
-            <span class="tool-tag">Data Models</span>
-          </div>
-          <div class="project-links">
-            <span class="project-link" style="cursor:default;opacity:.5">🔒 Confidential</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ZOMATO DASHBOARD -->
-    <div class="project-card">
-      <img src="assets/-Zomato-Analytics-Dashboard---Power-BI.png" alt="Zomato Dashboard" class="project-img" style="object-fit:cover;object-position:top;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-      <div class="project-img-placeholder" style="display:none">🍕</div>
-      <div class="project-body">
-        <div class="project-type">📊 Analytics · Power BI</div>
-        <div class="project-title">Zomato Sales Analytics Dashboard</div>
-        <div class="project-desc">Interactive Power BI dashboard analyzing Zomato's sales performance, user behavior, and city-wise trends. Features sales by year, top cities, order categories, and user demographics with gender and age-wise insights for business decision-making.</div>
-        <div class="project-meta">
-          <div class="project-tools">
-            <span class="tool-tag">Power BI</span>
-            <span class="tool-tag">DAX</span>
-            <span class="tool-tag">Sales Analytics</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/jayzz98/-Zomato-Analytics-Dashboard---Power-BI" target="_blank" class="project-link">⌥ GitHub</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- OLA DASHBOARD -->
-    <div class="project-card">
-      <img src="assets/OLA-Dashboard.png" alt="OLA Dashboard" class="project-img" style="object-fit:cover;object-position:top;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-      <div class="project-img-placeholder" style="display:none">🚗</div>
-      <div class="project-body">
-        <div class="project-type">📊 Analytics · Power BI</div>
-        <div class="project-title">OLA Ride Analytics Dashboard</div>
-        <div class="project-desc">Power BI dashboard analyzing Ola ride data with insights on booking volume, revenue, vehicle types, cancellations, and ratings. Includes booking status breakdown and ride trends over time for data-driven transport insights.</div>
-        <div class="project-meta">
-          <div class="project-tools">
-            <span class="tool-tag">Power BI</span>
-            <span class="tool-tag">DAX</span>
-            <span class="tool-tag">Transport Analytics</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/jayzz98/OLA-Dashboard" target="_blank" class="project-link">⌥ GitHub</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- HR DATA ANALYTICS -->
-    <div class="project-card">
-      <img src="assets/HR-Data-Analytics.png" alt="HR Data Analytics" class="project-img" style="object-fit:cover;object-position:top;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-      <div class="project-img-placeholder" style="display:none">👥</div>
-      <div class="project-body">
-        <div class="project-type">📊 Analytics · Power BI</div>
-        <div class="project-title">HR Data Analytics</div>
-        <div class="project-desc">Dashboard tracking key HR metrics like headcount, attrition rate, gender diversity, and hiring trends. Gain insights into workforce trends to support data-driven HR decisions and enhance organizational efficiency.</div>
-        <div class="project-meta">
-          <div class="project-tools">
-            <span class="tool-tag">Power BI</span>
-            <span class="tool-tag">DAX</span>
-            <span class="tool-tag">HR Data</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/jayzz98/HR-Data-Analytics" target="_blank" class="project-link">⌥ GitHub</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- HEALTHCARE DASHBOARD (Fallback image) -->
-    <div class="project-card">
-      <div class="project-img-placeholder" style="font-size:64px;color:#c8f135;">🏥</div>
-      <div class="project-body">
-        <div class="project-type">📊 Analytics · Power BI</div>
-        <div class="project-title">Healthcare Analytics Dashboard</div>
-        <div class="project-desc">Power BI dashboard analyzing 9,216 patient visits — demographics, visit timing, wait times, satisfaction scores, and department referrals. Identifies trends across weekdays, quarters, and age groups to support data-driven healthcare operations.</div>
-        <div class="project-meta">
-          <div class="project-tools">
-            <span class="tool-tag">Power BI</span>
-            <span class="tool-tag">DAX</span>
-            <span class="tool-tag">Healthcare Data</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/jayzz98/Healthcare-Analytics-Dashboard" target="_blank" class="project-link">⌥ GitHub</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
-  <div style="text-align:center;margin-top:40px">
-    <a href="https://github.com/jayzz98?tab=repositories" target="_blank" class="btn-outline">See All 25+ Projects on GitHub →</a>
+
+  <!-- ★ FEATURED: DATA LIE DETECTOR ★ -->
+  <div class="featured-project" style="grid-template-columns:1fr 1fr;direction:rtl">
+    <div class="fp-img" style="direction:ltr">
+      <img src="assets/dld_hero.png" alt="Data Lie Detector" onerror="this.parentNode.style.background='#1a1a2e';this.style.display='none'"/>
+      <div class="fp-img-overlay" style="background:linear-gradient(to left,transparent 60%,var(--surface))"></div>
+    </div>
+    <div class="fp-body" style="direction:ltr;padding:48px 40px 48px 48px">
+      <div class="fp-badge">Live on Web · Personal Product · May 2026</div>
+      <div class="fp-title">Data Lie Detector</div>
+      <p class="fp-desc">Upload any CSV dataset and instantly get AI-powered trust scores, anomaly detection, suspicious pattern analysis, and decision-safety verdicts. 3-tier alert system, 15+ analysis modules, multi-file comparison, and PDF export — all in seconds.</p>
+      <div class="fp-tools">
+        <span class="tool">Python</span><span class="tool">Streamlit</span><span class="tool">Pandas</span><span class="tool">NumPy</span><span class="tool">ML</span><span class="tool">Vercel</span>
+      </div>
+      <div class="fp-links">
+        <a href="https://data-lie-detector.vercel.app" target="_blank" class="proj-link filled">↗ Live Demo</a>
+        <a href="https://github.com/jayzz98/Data-Lie-Detector" target="_blank" class="proj-link">⌥ GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT GRID -->
+  <div class="proj-grid">
+
+    <!-- J&J -->
+    <div class="proj-card">
+      <div class="pc-client-img" style="background:#fff;">
+        <img src="assets/jnj_icon.png" style="width:64px;height:64px;object-fit:contain;"/>
+        <span style="color:#e00;font-weight:900;font-size:18px;font-family:sans-serif;">Johnson &amp; Johnson</span>
+      </div>
+      <div class="pc-body">
+        <div class="pc-type client">★ Client Project · Mar – Jul 2026</div>
+        <div class="pc-title">J&amp;J MedTech BI Dashboards</div>
+        <p class="pc-desc">2 production Power BI dashboards tracking 6 KPI areas across resource management and product portfolio. Enforced RLS and role-based access for enterprise compliance.</p>
+        <div class="pc-footer">
+          <div class="pc-tools"><span class="pc-tool">Power BI</span><span class="pc-tool">DAX</span><span class="pc-tool">RLS</span><span class="pc-tool">Power Query</span></div>
+          <span class="pc-link" style="opacity:.4;cursor:default">🔒 Confidential</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- WARNER BROS -->
+    <div class="proj-card">
+      <div class="pc-client-img" style="background:#0033a0;">
+        <img src="assets/wbd_icon.png" style="width:64px;height:64px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))"/>
+        <span style="color:#fff;font-weight:900;font-size:16px;line-height:1.1;">WARNER BROS.<br/>DISCOVERY</span>
+      </div>
+      <div class="pc-body">
+        <div class="pc-type client">★ Client Project · Dec 2025 – Feb 2026</div>
+        <div class="pc-title">Warner Bros. Discovery — BI Migration</div>
+        <p class="pc-desc">Rebuilt 15+ SAP BusinessObjects reports in Power BI. 3-step validation process achieving zero-defect UAT sign-off for coordinated overseas go-live.</p>
+        <div class="pc-footer">
+          <div class="pc-tools"><span class="pc-tool">Power BI</span><span class="pc-tool">SAP BO</span><span class="pc-tool">DAX</span><span class="pc-tool">SQL</span></div>
+          <span class="pc-link" style="opacity:.4;cursor:default">🔒 Confidential</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- REAL TIME NEWS -->
+    <div class="proj-card">
+      <div class="pc-img">
+        <img src="assets/news_dash_1.png" alt="Real Time News Dashboard" onerror="this.style.display='none';this.parentNode.innerHTML='<div style=\'padding:48px;text-align:center;font-size:36px;\'>📰</div>'"/>
+      </div>
+      <div class="pc-body">
+        <div class="pc-type">📰 Analytics · Power BI · REST API</div>
+        <div class="pc-title">Real-Time News Analytics Dashboard</div>
+        <p class="pc-desc">API-driven Power BI dashboard pulling live news data — multilingual coverage, historical data storage, Sensex live feed, and real-time Twitter/X integration via REST APIs.</p>
+        <div class="pc-footer">
+          <div class="pc-tools"><span class="pc-tool">Power BI</span><span class="pc-tool">REST API</span><span class="pc-tool">Power Query</span><span class="pc-tool">DAX</span></div>
+          <a href="https://github.com/jayzz98/Real-Time-News-Dashboard" target="_blank" class="pc-link">⌥ GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ZOMATO -->
+    <div class="proj-card">
+      <div class="pc-img">
+        <img src="assets/-Zomato-Analytics-Dashboard---Power-BI.png" alt="Zomato Dashboard" onerror="this.style.display='none';this.parentNode.innerHTML='<div style=\'padding:48px;text-align:center;font-size:36px;\'>🍕</div>'"/>
+      </div>
+      <div class="pc-body">
+        <div class="pc-type">📊 Analytics · Power BI</div>
+        <div class="pc-title">Zomato Sales Analytics</div>
+        <p class="pc-desc">Sales performance, user behavior, and city-wise trends. Top cities, order categories, and gender/age-wise user demographics.</p>
+        <div class="pc-footer">
+          <div class="pc-tools"><span class="pc-tool">Power BI</span><span class="pc-tool">DAX</span><span class="pc-tool">Sales</span></div>
+          <a href="https://github.com/jayzz98/-Zomato-Analytics-Dashboard---Power-BI" target="_blank" class="pc-link">⌥ GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- OLA -->
+    <div class="proj-card">
+      <div class="pc-img">
+        <img src="assets/OLA-Dashboard.png" alt="OLA Dashboard" onerror="this.style.display='none';this.parentNode.innerHTML='<div style=\'padding:48px;text-align:center;font-size:36px;\'>🚗</div>'"/>
+      </div>
+      <div class="pc-body">
+        <div class="pc-type">📊 Analytics · Power BI</div>
+        <div class="pc-title">OLA Ride Analytics</div>
+        <p class="pc-desc">Booking volume, revenue, vehicle types, cancellations, and ratings. Booking status breakdown and ride trends over time.</p>
+        <div class="pc-footer">
+          <div class="pc-tools"><span class="pc-tool">Power BI</span><span class="pc-tool">DAX</span><span class="pc-tool">Transport</span></div>
+          <a href="https://github.com/jayzz98/OLA-Dashboard" target="_blank" class="pc-link">⌥ GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- HR ANALYTICS -->
+    <div class="proj-card">
+      <div class="pc-img">
+        <img src="assets/HR-Data-Analytics.png" alt="HR Analytics" onerror="this.style.display='none';this.parentNode.innerHTML='<div style=\'padding:48px;text-align:center;font-size:36px;\'>👥</div>'"/>
+      </div>
+      <div class="pc-body">
+        <div class="pc-type">📊 Analytics · Power BI</div>
+        <div class="pc-title">HR Data Analytics</div>
+        <p class="pc-desc">Headcount, attrition rate, gender diversity, and hiring trends. Data-driven insights to support HR decisions and workforce planning.</p>
+        <div class="pc-footer">
+          <div class="pc-tools"><span class="pc-tool">Power BI</span><span class="pc-tool">DAX</span><span class="pc-tool">HR</span></div>
+          <a href="https://github.com/jayzz98/HR-Data-Analytics" target="_blank" class="pc-link">⌥ GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- HEALTHCARE -->
+    <div class="proj-card">
+      <div class="pc-placeholder"><span style="font-size:48px">🏥</span></div>
+      <div class="pc-body">
+        <div class="pc-type">📊 Analytics · Power BI</div>
+        <div class="pc-title">Healthcare Analytics</div>
+        <p class="pc-desc">9,216 patient visits — demographics, wait times, satisfaction scores, and department referrals. Trends across weekdays, quarters, and age groups.</p>
+        <div class="pc-footer">
+          <div class="pc-tools"><span class="pc-tool">Power BI</span><span class="pc-tool">DAX</span><span class="pc-tool">Healthcare</span></div>
+          <a href="https://github.com/jayzz98/Healthcare-Analytics-Dashboard" target="_blank" class="pc-link">⌥ GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CREDIT CARD FRAUD -->
+    <div class="proj-card">
+      <div class="pc-placeholder"><span style="font-size:48px">💳</span></div>
+      <div class="pc-body">
+        <div class="pc-type">🤖 Machine Learning · Python</div>
+        <div class="pc-title">Credit Card Fraud Detection</div>
+        <p class="pc-desc">Logistic regression with scikit-learn — data preprocessing, under-sampling for class imbalance, feature scaling, and accuracy evaluation on Kaggle dataset.</p>
+        <div class="pc-footer">
+          <div class="pc-tools"><span class="pc-tool">Python</span><span class="pc-tool">scikit-learn</span><span class="pc-tool">Pandas</span></div>
+          <a href="https://github.com/jayzz98/Credit-Card-Fraud-Detection" target="_blank" class="pc-link">⌥ GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW ALL -->
+    <div class="proj-card" style="display:flex;align-items:center;justify-content:center;min-height:200px;border-style:dashed">
+      <div style="text-align:center">
+        <div style="font-size:32px;margin-bottom:12px">⌥</div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:18px;font-weight:700;margin-bottom:8px">25+ Repos on GitHub</div>
+        <a href="https://github.com/jayzz98?tab=repositories" target="_blank" class="btn-ghost" style="font-size:13px;padding:10px 20px">View All →</a>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<div class="divider"></div>
+<div class="sep"></div>
 
 <!-- SKILLS -->
-<section id="skills" class="animate">
-  <div class="section-eyebrow">Expertise</div>
-  <div class="section-title">Technical <em>Skills</em></div>
-  <div class="skills-container">
-    <div class="skill-group">
-      <h3>BI & Visualization</h3>
-      <div class="skill-row"><div class="skill-top"><span class="skill-name">Power BI + DAX</span><span class="skill-pct">95%</span></div><div class="skill-bar"><div class="skill-fill" style="width:0%" data-width="95%"></div></div></div>
-      <div class="skill-row"><div class="skill-top"><span class="skill-name">SQL & Data Profiling</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-fill" style="width:0%" data-width="90%"></div></div></div>
-      <div class="skill-row"><div class="skill-top"><span class="skill-name">Tableau</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-fill" style="width:0%" data-width="80%"></div></div></div>
-      <div class="skill-row"><div class="skill-top"><span class="skill-name">MicroStrategy / SAP BO</span><span class="skill-pct">75%</span></div><div class="skill-bar"><div class="skill-fill" style="width:0%" data-width="75%"></div></div></div>
-      <div class="skill-row"><div class="skill-top"><span class="skill-name">Advanced Excel</span><span class="skill-pct">92%</span></div><div class="skill-bar"><div class="skill-fill" style="width:0%" data-width="92%"></div></div></div>
+<section id="skills" class="fade-up">
+  <div class="eyebrow">Expertise</div>
+  <div class="section-title">Technical Skills</div>
+  <p class="section-sub">Proficient across the full BI stack — from data modeling to LLM integration.</p>
+  <div class="skills-grid">
+    <div>
+      <div class="skill-cat-title">BI &amp; Visualization</div>
+      <div class="skill-bar-row"><div class="skill-bar-top"><span class="skill-name">Power BI + DAX</span><span class="skill-pct">95%</span></div><div class="skill-track"><div class="skill-fill" data-w="95%"></div></div></div>
+      <div class="skill-bar-row"><div class="skill-bar-top"><span class="skill-name">Advanced Excel</span><span class="skill-pct">92%</span></div><div class="skill-track"><div class="skill-fill" data-w="92%"></div></div></div>
+      <div class="skill-bar-row"><div class="skill-bar-top"><span class="skill-name">Power Query / ETL</span><span class="skill-pct">88%</span></div><div class="skill-track"><div class="skill-fill" data-w="88%"></div></div></div>
+      <div class="skill-bar-row"><div class="skill-bar-top"><span class="skill-name">Tableau</span><span class="skill-pct">80%</span></div><div class="skill-track"><div class="skill-fill" data-w="80%"></div></div></div>
+      <div class="skill-bar-row"><div class="skill-bar-top"><span class="skill-name">MicroStrategy / SAP BO</span><span class="skill-pct">75%</span></div><div class="skill-track"><div class="skill-fill" data-w="75%"></div></div></div>
     </div>
-    <div class="skill-group">
-      <h3>Programming & AI</h3>
-      <div class="skill-row"><div class="skill-top"><span class="skill-name">Python (Pandas, NumPy)</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-fill" style="width:0%" data-width="85%"></div></div></div>
-      <div class="skill-row"><div class="skill-top"><span class="skill-name">LangChain + LLM Integration</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-fill" style="width:0%" data-width="80%"></div></div></div>
-      <div class="skill-row"><div class="skill-top"><span class="skill-name">Machine Learning (scikit-learn)</span><span class="skill-pct">75%</span></div><div class="skill-bar"><div class="skill-fill" style="width:0%" data-width="75%"></div></div></div>
-      <div class="skill-row"><div class="skill-top"><span class="skill-name">REST APIs & Git</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-fill" style="width:0%" data-width="80%"></div></div></div>
-      <div class="skill-row"><div class="skill-top"><span class="skill-name">Power Query / ETL</span><span class="skill-pct">88%</span></div><div class="skill-bar"><div class="skill-fill" style="width:0%" data-width="88%"></div></div></div>
+    <div>
+      <div class="skill-cat-title">Programming &amp; AI</div>
+      <div class="skill-bar-row"><div class="skill-bar-top"><span class="skill-name">SQL (MySQL, SQL Server)</span><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-fill" data-w="90%"></div></div></div>
+      <div class="skill-bar-row"><div class="skill-bar-top"><span class="skill-name">Python (Pandas, NumPy)</span><span class="skill-pct">85%</span></div><div class="skill-track"><div class="skill-fill" data-w="85%"></div></div></div>
+      <div class="skill-bar-row"><div class="skill-bar-top"><span class="skill-name">LangChain + LLM Integration</span><span class="skill-pct">80%</span></div><div class="skill-track"><div class="skill-fill" data-w="80%"></div></div></div>
+      <div class="skill-bar-row"><div class="skill-bar-top"><span class="skill-name">REST APIs &amp; Git</span><span class="skill-pct">80%</span></div><div class="skill-track"><div class="skill-fill" data-w="80%"></div></div></div>
+      <div class="skill-bar-row"><div class="skill-bar-top"><span class="skill-name">ML (scikit-learn)</span><span class="skill-pct">72%</span></div><div class="skill-track"><div class="skill-fill" data-w="72%"></div></div></div>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
+<div class="sep"></div>
 
 <!-- CERTIFICATIONS -->
-<section class="animate" style="padding-top:60px">
-  <div class="section-eyebrow">Credentials</div>
-  <div class="section-title">Certifications & <em>Achievements</em></div>
-  <div class="certs-grid">
-    <div class="cert-card">
+<section class="fade-up" style="padding-top:60px">
+  <div class="eyebrow">Credentials</div>
+  <div class="section-title">Certifications</div>
+  <div class="certs-grid" style="margin-top:40px">
+    <div class="cert">
       <div class="cert-icon">🏆</div>
       <div class="cert-name">Databricks Certified Data Analyst Associate</div>
-      <div class="cert-issuer">Databricks</div>
+      <div class="cert-by">Databricks</div>
       <div class="cert-date">Sep 2026</div>
     </div>
-    <div class="cert-card">
+    <div class="cert">
       <div class="cert-icon">🌐</div>
       <div class="cert-name">Data Analytics Essentials</div>
-      <div class="cert-issuer">Cisco Networking Academy</div>
+      <div class="cert-by">Cisco Networking Academy</div>
       <div class="cert-date">Jul 2024</div>
     </div>
-    <div class="cert-card">
+    <div class="cert">
       <div class="cert-icon">💙</div>
       <div class="cert-name">Introduction to Data Analyst</div>
-      <div class="cert-issuer">IBM</div>
+      <div class="cert-by">IBM</div>
       <div class="cert-date">Aug 2024</div>
     </div>
-    <div class="cert-card" style="grid-column:1/-1;background:rgba(200,241,53,0.04);border-color:rgba(200,241,53,0.2)">
+    <div class="cert" style="border-color:rgba(110,231,183,0.2);background:rgba(110,231,183,0.03)">
       <div class="cert-icon">📄</div>
-      <div class="cert-name">Published Research Paper — ResearchGate</div>
-      <div class="cert-issuer" style="margin-top:6px;font-size:14px">"Zinc-Oxide Nanofiber and Green Synthesized Silver Nanoparticle Based Enzymatic Chemiresistive Sensor for Glucose Detection"</div>
-      <a href="https://www.researchgate.net/publication/382675555" target="_blank" style="color:var(--accent);font-size:13px;margin-top:8px;display:inline-block;text-decoration:none">→ View on ResearchGate</a>
+      <div class="cert-name">Published Research Paper</div>
+      <div class="cert-by" style="margin-top:4px;font-size:12px;line-height:1.4">"Zinc-Oxide Nanofiber ... Glucose Detection"</div>
+      <a href="https://www.researchgate.net/publication/382675555" target="_blank" style="color:var(--accent);font-size:12px;text-decoration:none;margin-top:8px;display:inline-block">→ ResearchGate</a>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
+<div class="sep"></div>
 
 <!-- CONTACT -->
-<section id="contact" class="animate">
+<section id="contact" class="fade-up">
   <div class="contact-wrap">
-    <div class="contact-left">
-      <h2>Let's build something <em>great</em></h2>
-      <p>Open to Data Analyst, BI Developer, and Data Science roles. I move fast, I ship clean, and I bring AI to the table.</p>
-      <div class="contact-links">
-        <a href="mailto:jaykadao99210@gmail.com" class="contact-link">
-          <div class="contact-link-icon">✉️</div>
-          <div class="contact-link-text">
-            <div class="label">Email</div>
-            <div class="val">jaykadao99210@gmail.com</div>
-          </div>
-        </a>
-        <a href="https://linkedin.com/in/jaykumar-kadao" target="_blank" class="contact-link">
-          <div class="contact-link-icon">💼</div>
-          <div class="contact-link-text">
-            <div class="label">LinkedIn</div>
-            <div class="val">linkedin.com/in/jaykumar-kadao</div>
-          </div>
-        </a>
-        <a href="https://github.com/jayzz98" target="_blank" class="contact-link">
-          <div class="contact-link-icon">⌥</div>
-          <div class="contact-link-text">
-            <div class="label">GitHub</div>
-            <div class="val">github.com/jayzz98</div>
-          </div>
-        </a>
-        <a href="tel:+919356724738" class="contact-link">
-          <div class="contact-link-icon">📱</div>
-          <div class="contact-link-text">
-            <div class="label">Phone</div>
-            <div class="val">+91 9356724738</div>
-          </div>
-        </a>
-      </div>
+    <div>
+      <div class="contact-title">Let's build<br/><em>something great</em></div>
+      <p class="contact-sub">Open to Data Analyst, BI Developer, and AI/Data Science roles. I move fast, ship clean, and bring AI to the table.</p>
+      <a href="mailto:jaykadao99210@gmail.com" class="clink">
+        <div class="clink-icon">✉️</div>
+        <div class="clink-text"><div class="lbl">Email</div><div class="val">jaykadao99210@gmail.com</div></div>
+      </a>
+      <a href="https://linkedin.com/in/jaykumar-kadao" target="_blank" class="clink">
+        <div class="clink-icon">💼</div>
+        <div class="clink-text"><div class="lbl">LinkedIn</div><div class="val">linkedin.com/in/jaykumar-kadao</div></div>
+      </a>
+      <a href="https://github.com/jayzz98" target="_blank" class="clink">
+        <div class="clink-icon">⌥</div>
+        <div class="clink-text"><div class="lbl">GitHub</div><div class="val">github.com/jayzz98</div></div>
+      </a>
+      <a href="tel:+919356724738" class="clink">
+        <div class="clink-icon">📱</div>
+        <div class="clink-text"><div class="lbl">Phone</div><div class="val">+91 9356724738</div></div>
+      </a>
     </div>
-    <div class="contact-right">
-      <div class="fact-card">
-        <div class="fact-num">98%</div>
-        <div class="fact-label"><strong>Time reduction</strong>AI-generated insights vs manual reporting</div>
-      </div>
-      <div class="fact-card">
-        <div class="fact-num">15+</div>
-        <div class="fact-label"><strong>Reports migrated</strong>SAP BO → Power BI with zero-defect UAT</div>
-      </div>
-      <div class="fact-card">
-        <div class="fact-num">100%</div>
-        <div class="fact-label"><strong>UAT Sign-off Rate</strong>Across all client-facing BI deliverables</div>
-      </div>
-      <div class="fact-card">
-        <div class="fact-num">3+</div>
-        <div class="fact-label"><strong>Enterprise clients</strong>Warner Bros., J&J MedTech, and more</div>
-      </div>
+    <div class="fact-grid">
+      <div class="fact"><div class="fact-num">98%</div><div class="fact-label"><strong>Time Reduction</strong>AI insights vs manual reporting</div></div>
+      <div class="fact"><div class="fact-num">15+</div><div class="fact-label"><strong>Reports Migrated</strong>SAP BO → Power BI</div></div>
+      <div class="fact"><div class="fact-num">100%</div><div class="fact-label"><strong>UAT Rate</strong>Zero-defect client sign-offs</div></div>
+      <div class="fact"><div class="fact-num">3+</div><div class="fact-label"><strong>Enterprise Clients</strong>WBD, J&amp;J, and more</div></div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <p>© 2026 Jaykumar Kadao · Nagpur, India</p>
-  <div>
+  <p>© 2026 Jaykumar Kadao · Nagpur, India · B.Tech Biomedical Eng, RCOEM</p>
+  <div class="footer-links">
     <a href="https://github.com/jayzz98" target="_blank">GitHub</a>
     <a href="https://linkedin.com/in/jaykumar-kadao" target="_blank">LinkedIn</a>
     <a href="mailto:jaykadao99210@gmail.com">Email</a>
@@ -653,33 +585,29 @@ footer a:hover{color:var(--accent)}
 </footer>
 
 <script>
-// Experience tabs
-function showExp(idx, el) {
-  document.querySelectorAll('.exp-item').forEach(e=>e.classList.remove('active'));
-  document.querySelectorAll('.exp-detail').forEach(e=>e.classList.remove('active'));
+// Tab switcher
+function showTab(i, el){
+  document.querySelectorAll('.exp-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.exp-panel').forEach(p=>p.classList.remove('active'));
   el.classList.add('active');
-  document.getElementById('exp-'+idx).classList.add('active');
+  document.getElementById('tab-'+i).classList.add('active');
 }
 
 // Scroll animations
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if(e.isIntersecting) e.target.classList.add('visible');
-  });
-}, {threshold: 0.1});
-document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+const obs = new IntersectionObserver(e=>{
+  e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('in')});
+},{threshold:0.08});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 
-// Skill bar animations
-const skillObserver = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if(e.isIntersecting) {
-      e.target.querySelectorAll('.skill-fill').forEach(bar => {
-        bar.style.width = bar.dataset.width;
-      });
+// Skill bars
+const sobs = new IntersectionObserver(e=>{
+  e.forEach(el=>{
+    if(el.isIntersecting){
+      el.target.querySelectorAll('.skill-fill').forEach(b=>{b.style.width=b.dataset.w});
     }
   });
-}, {threshold: 0.3});
-document.querySelectorAll('.skills-container').forEach(el => skillObserver.observe(el));
+},{threshold:0.3});
+document.querySelectorAll('.skills-grid').forEach(el=>sobs.observe(el));
 </script>
 </body>
 </html>
