@@ -129,14 +129,15 @@ section{padding:100px 48px;max-width:1200px;margin:0 auto}
 .pc-link:hover{color:var(--accent);border-color:var(--accent)}
 
 /* ── SKILLS ── */
-.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
-.skill-cat-title{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
-.skill-bar-row{margin-bottom:18px}
-.skill-bar-top{display:flex;justify-content:space-between;margin-bottom:7px}
-.skill-name{font-size:13px;font-weight:600}
-.skill-pct{font-size:12px;font-weight:700;color:var(--accent)}
-.skill-track{height:5px;background:var(--surface2);border-radius:100px;overflow:hidden}
-.skill-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--blue));border-radius:100px;width:0;transition:width 1.4s cubic-bezier(.22,.68,0,1.2)}
+.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.skill-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:26px;transition:.2s}
+.skill-card:hover{border-color:var(--border2);transform:translateY(-2px);box-shadow:0 14px 40px rgba(0,0,0,0.35)}
+.skill-cat-title{font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.skill-cat-title::before{content:'';width:4px;height:14px;border-radius:2px;background:var(--accent)}
+.skill-tags{display:flex;flex-wrap:wrap;gap:8px}
+.skill-tag{background:var(--surface2);border:1px solid var(--border);color:var(--text);font-size:12px;font-weight:500;padding:6px 12px;border-radius:7px;transition:.2s}
+.skill-tag:hover{border-color:var(--accent);color:var(--accent);background:rgba(110,231,183,0.06);transform:translateY(-1px)}
+
 
 /* ── CERTS ── */
 .certs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
@@ -300,7 +301,7 @@ footer p{font-size:12px;color:var(--muted2)}
   <div class="section-title">Featured Projects</div>
   <p class="section-sub">AI tools, enterprise BI migrations, and data dashboards — built and shipped in production.</p>
 
-  <!-- ★ FEATURED: AI BI COPILOT ★ -->
+  <!-- FEATURED: AI BI COPILOT -->
   <div class="featured-project">
     <div class="fp-img">
       <div class="fp-mockup">
@@ -326,7 +327,7 @@ footer p{font-size:12px;color:var(--muted2)}
     </div>
   </div>
 
-  <!-- ★ FEATURED: DATA LIE DETECTOR ★ -->
+  <!-- FEATURED: DATA LIE DETECTOR -->
   <div class="featured-project" style="direction:ltr">
     <div class="fp-body" style="padding:40px 44px">
       <div class="fp-badge">Live on Web · Personal Product · May 2026</div>
@@ -363,12 +364,11 @@ footer p{font-size:12px;color:var(--muted2)}
         <span style="color:#e00;font-weight:900;font-size:18px;font-family:sans-serif;">Johnson &amp; Johnson</span>
       </div>
       <div class="pc-body">
-        <div class="pc-type client">★ Client Project · Mar – Jul 2026</div>
+        <div class="pc-type client">Client Project · Mar – Jul 2026</div>
         <div class="pc-title">J&amp;J MedTech BI Dashboards</div>
         <p class="pc-desc">2 production Power BI dashboards tracking 6 KPI areas across resource management and product portfolio. Enforced RLS and role-based access for enterprise compliance.</p>
         <div class="pc-footer">
           <div class="pc-tools"><span class="pc-tool">Power BI</span><span class="pc-tool">DAX</span><span class="pc-tool">RLS</span><span class="pc-tool">Power Query</span></div>
-          <span class="pc-link" style="opacity:.4;cursor:default">🔒 Confidential</span>
         </div>
       </div>
     </div>
@@ -380,12 +380,11 @@ footer p{font-size:12px;color:var(--muted2)}
         <span style="color:#fff;font-weight:900;font-size:16px;line-height:1.1;">WARNER BROS.<br/>DISCOVERY</span>
       </div>
       <div class="pc-body">
-        <div class="pc-type client">★ Client Project · Dec 2025 – Feb 2026</div>
+        <div class="pc-type client">Client Project · Dec 2025 – Feb 2026</div>
         <div class="pc-title">Warner Bros. Discovery — BI Migration</div>
         <p class="pc-desc">Rebuilt 15+ SAP BusinessObjects reports in Power BI. 3-step validation process achieving zero-defect UAT sign-off for coordinated overseas go-live.</p>
         <div class="pc-footer">
           <div class="pc-tools"><span class="pc-tool">Power BI</span><span class="pc-tool">SAP BO</span><span class="pc-tool">DAX</span><span class="pc-tool">SQL</span></div>
-          <span class="pc-link" style="opacity:.4;cursor:default">🔒 Confidential</span>
         </div>
       </div>
     </div>
@@ -393,10 +392,10 @@ footer p{font-size:12px;color:var(--muted2)}
     <!-- REAL TIME NEWS -->
     <div class="proj-card">
       <div class="pc-img">
-        <img src="assets/news_dash_1.png" alt="Real Time News Dashboard" onerror="this.style.display='none';this.parentNode.innerHTML='<div style=\'padding:48px;text-align:center;font-size:36px;\'>📰</div>'"/>
+        <img src="assets/news_dash_1.png" alt="Real Time News Dashboard" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'pc-placeholder\'><span style=\'font-size:14px;color:var(--muted);font-weight:600\'>News Analytics</span></div>'"/>
       </div>
       <div class="pc-body">
-        <div class="pc-type">📰 Analytics · Power BI · REST API</div>
+        <div class="pc-type">Analytics · Power BI · REST API</div>
         <div class="pc-title">Real-Time News Analytics Dashboard</div>
         <p class="pc-desc">API-driven Power BI dashboard pulling live news data — multilingual coverage, historical data storage, Sensex live feed, and real-time Twitter/X integration via REST APIs.</p>
         <div class="pc-footer">
@@ -409,10 +408,10 @@ footer p{font-size:12px;color:var(--muted2)}
     <!-- ZOMATO -->
     <div class="proj-card">
       <div class="pc-img">
-        <img src="assets/-Zomato-Analytics-Dashboard---Power-BI.png" alt="Zomato Dashboard" onerror="this.style.display='none';this.parentNode.innerHTML='<div style=\'padding:48px;text-align:center;font-size:36px;\'>🍕</div>'"/>
+        <img src="assets/-Zomato-Analytics-Dashboard---Power-BI.png" alt="Zomato Dashboard" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'pc-placeholder\'><span style=\'font-size:14px;color:var(--muted);font-weight:600\'>Zomato Analytics</span></div>'"/>
       </div>
       <div class="pc-body">
-        <div class="pc-type">📊 Analytics · Power BI</div>
+        <div class="pc-type">Analytics · Power BI</div>
         <div class="pc-title">Zomato Sales Analytics</div>
         <p class="pc-desc">Sales performance, user behavior, and city-wise trends. Top cities, order categories, and gender/age-wise user demographics.</p>
         <div class="pc-footer">
@@ -425,10 +424,10 @@ footer p{font-size:12px;color:var(--muted2)}
     <!-- OLA -->
     <div class="proj-card">
       <div class="pc-img">
-        <img src="assets/OLA-Dashboard.png" alt="OLA Dashboard" onerror="this.style.display='none';this.parentNode.innerHTML='<div style=\'padding:48px;text-align:center;font-size:36px;\'>🚗</div>'"/>
+        <img src="assets/OLA-Dashboard.png" alt="OLA Dashboard" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'pc-placeholder\'><span style=\'font-size:14px;color:var(--muted);font-weight:600\'>OLA Analytics</span></div>'"/>
       </div>
       <div class="pc-body">
-        <div class="pc-type">📊 Analytics · Power BI</div>
+        <div class="pc-type">Analytics · Power BI</div>
         <div class="pc-title">OLA Ride Analytics</div>
         <p class="pc-desc">Booking volume, revenue, vehicle types, cancellations, and ratings. Booking status breakdown and ride trends over time.</p>
         <div class="pc-footer">
@@ -441,10 +440,10 @@ footer p{font-size:12px;color:var(--muted2)}
     <!-- HR ANALYTICS -->
     <div class="proj-card">
       <div class="pc-img">
-        <img src="assets/HR-Data-Analytics.png" alt="HR Analytics" onerror="this.style.display='none';this.parentNode.innerHTML='<div style=\'padding:48px;text-align:center;font-size:36px;\'>👥</div>'"/>
+        <img src="assets/HR-Data-Analytics.png" alt="HR Analytics" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'pc-placeholder\'><span style=\'font-size:14px;color:var(--muted);font-weight:600\'>HR Analytics</span></div>'"/>
       </div>
       <div class="pc-body">
-        <div class="pc-type">📊 Analytics · Power BI</div>
+        <div class="pc-type">Analytics · Power BI</div>
         <div class="pc-title">HR Data Analytics</div>
         <p class="pc-desc">Headcount, attrition rate, gender diversity, and hiring trends. Data-driven insights to support HR decisions and workforce planning.</p>
         <div class="pc-footer">
@@ -457,10 +456,10 @@ footer p{font-size:12px;color:var(--muted2)}
     <!-- HEALTHCARE -->
     <div class="proj-card">
       <div class="pc-img">
-        <img src="assets/healthcare_dashboard.jpg" alt="Healthcare Analytics Dashboard" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'pc-placeholder\'><span>🏥</span></div>'"/>
+        <img src="assets/healthcare_dashboard.jpg" alt="Healthcare Analytics Dashboard" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'pc-placeholder\'><span style=\'font-size:14px;color:var(--muted);font-weight:600\'>Healthcare Analytics</span></div>'"/>
       </div>
       <div class="pc-body">
-        <div class="pc-type">📊 Analytics · Power BI</div>
+        <div class="pc-type">Analytics · Power BI</div>
         <div class="pc-title">Healthcare Analytics</div>
         <p class="pc-desc">9,216 patient visits — demographics, wait times, satisfaction scores, and department referrals. Trends across weekdays, quarters, and age groups.</p>
         <div class="pc-footer">
@@ -472,9 +471,17 @@ footer p{font-size:12px;color:var(--muted2)}
 
     <!-- CREDIT CARD FRAUD -->
     <div class="proj-card">
-      <div class="pc-placeholder"><span style="font-size:48px">💳</span></div>
+      <div class="pc-placeholder">
+        <div style="width:120px;height:74px;border-radius:10px;background:linear-gradient(135deg,#1e1b4b,#312e81);border:1px solid rgba(255,255,255,0.15);padding:10px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 8px 24px rgba(0,0,0,0.5)">
+          <div style="width:22px;height:16px;border-radius:3px;background:#f59e0b"></div>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span style="font-size:9px;font-family:monospace;letter-spacing:1px;color:rgba(255,255,255,0.7)">•••• 8821</span>
+            <span style="font-size:8px;font-weight:700;color:var(--accent)">FRAUD AI</span>
+          </div>
+        </div>
+      </div>
       <div class="pc-body">
-        <div class="pc-type">🤖 Machine Learning · Python</div>
+        <div class="pc-type">Machine Learning · Python</div>
         <div class="pc-title">Credit Card Fraud Detection</div>
         <p class="pc-desc">Logistic regression with scikit-learn — data preprocessing, under-sampling for class imbalance, feature scaling, and accuracy evaluation on Kaggle dataset.</p>
         <div class="pc-footer">
@@ -504,21 +511,79 @@ footer p{font-size:12px;color:var(--muted2)}
   <div class="section-title">Technical Skills</div>
   <p class="section-sub">Proficient across the full BI stack — from data modeling to LLM integration.</p>
   <div class="skills-grid">
-    <div>
+    <div class="skill-card">
       <div class="skill-cat-title">BI &amp; Visualization</div>
-      <div class="skill-bar-row"><div class="skill-bar-top"><span class="skill-name">Power BI + DAX</span><span class="skill-pct">95%</span></div><div class="skill-track"><div class="skill-fill" data-w="95%"></div></div></div>
-      <div class="skill-bar-row"><div class="skill-bar-top"><span class="skill-name">Advanced Excel</span><span class="skill-pct">92%</span></div><div class="skill-track"><div class="skill-fill" data-w="92%"></div></div></div>
-      <div class="skill-bar-row"><div class="skill-bar-top"><span class="skill-name">Power Query / ETL</span><span class="skill-pct">88%</span></div><div class="skill-track"><div class="skill-fill" data-w="88%"></div></div></div>
-      <div class="skill-bar-row"><div class="skill-bar-top"><span class="skill-name">Tableau</span><span class="skill-pct">80%</span></div><div class="skill-track"><div class="skill-fill" data-w="80%"></div></div></div>
-      <div class="skill-bar-row"><div class="skill-bar-top"><span class="skill-name">MicroStrategy / SAP BO</span><span class="skill-pct">75%</span></div><div class="skill-track"><div class="skill-fill" data-w="75%"></div></div></div>
+      <div class="skill-tags">
+        <span class="skill-tag">Power BI</span>
+        <span class="skill-tag">DAX</span>
+        <span class="skill-tag">Power Query (M)</span>
+        <span class="skill-tag">Power BI Service</span>
+        <span class="skill-tag">Tableau</span>
+        <span class="skill-tag">MicroStrategy</span>
+        <span class="skill-tag">SAP BusinessObjects</span>
+        <span class="skill-tag">Dashboard Development</span>
+        <span class="skill-tag">KPI Reporting</span>
+        <span class="skill-tag">Power Apps</span>
+        <span class="skill-tag">Data Visualization</span>
+      </div>
     </div>
-    <div>
-      <div class="skill-cat-title">Programming &amp; AI</div>
-      <div class="skill-bar-row"><div class="skill-bar-top"><span class="skill-name">SQL (MySQL, SQL Server)</span><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-fill" data-w="90%"></div></div></div>
-      <div class="skill-bar-row"><div class="skill-bar-top"><span class="skill-name">Python (Pandas, NumPy)</span><span class="skill-pct">85%</span></div><div class="skill-track"><div class="skill-fill" data-w="85%"></div></div></div>
-      <div class="skill-bar-row"><div class="skill-bar-top"><span class="skill-name">LangChain + LLM Integration</span><span class="skill-pct">80%</span></div><div class="skill-track"><div class="skill-fill" data-w="80%"></div></div></div>
-      <div class="skill-bar-row"><div class="skill-bar-top"><span class="skill-name">REST APIs &amp; Git</span><span class="skill-pct">80%</span></div><div class="skill-track"><div class="skill-fill" data-w="80%"></div></div></div>
-      <div class="skill-bar-row"><div class="skill-bar-top"><span class="skill-name">ML (scikit-learn)</span><span class="skill-pct">72%</span></div><div class="skill-track"><div class="skill-fill" data-w="72%"></div></div></div>
+
+    <div class="skill-card">
+      <div class="skill-cat-title">Databases &amp; Data Engineering</div>
+      <div class="skill-tags">
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">MySQL</span>
+        <span class="skill-tag">SQL Server</span>
+        <span class="skill-tag">ETL</span>
+        <span class="skill-tag">ELT</span>
+        <span class="skill-tag">Databricks</span>
+        <span class="skill-tag">Data Modeling</span>
+        <span class="skill-tag">Data Cleaning</span>
+        <span class="skill-tag">Data Validation</span>
+        <span class="skill-tag">Data Governance</span>
+        <span class="skill-tag">Data Profiling</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-cat-title">Programming &amp; Artificial Intelligence</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Pandas</span>
+        <span class="skill-tag">NumPy</span>
+        <span class="skill-tag">Matplotlib</span>
+        <span class="skill-tag">REST APIs</span>
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag">GitHub Copilot</span>
+        <span class="skill-tag">LLM Integration</span>
+        <span class="skill-tag">NVIDIA NIM</span>
+        <span class="skill-tag">LangChain</span>
+        <span class="skill-tag">Generative AI</span>
+        <span class="skill-tag">AI-Assisted Automation</span>
+        <span class="skill-tag">AI Reporting</span>
+        <span class="skill-tag">Microsoft Copilot</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-cat-title">Governance, Architecture &amp; Productivity</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Row-Level Security (RLS)</span>
+        <span class="skill-tag">Semantic Data Modeling</span>
+        <span class="skill-tag">Power BI Dataflows</span>
+        <span class="skill-tag">Workspace Management</span>
+        <span class="skill-tag">Dataset Refresh</span>
+        <span class="skill-tag">Role-Based Access Control</span>
+        <span class="skill-tag">Advanced Excel</span>
+        <span class="skill-tag">Pivot Tables</span>
+        <span class="skill-tag">XLOOKUP</span>
+        <span class="skill-tag">VLOOKUP</span>
+        <span class="skill-tag">INDEX/MATCH</span>
+        <span class="skill-tag">SharePoint</span>
+        <span class="skill-tag">PowerPoint</span>
+        <span class="skill-tag">Business Reporting</span>
+        <span class="skill-tag">Cross-functional Collaboration</span>
+      </div>
     </div>
   </div>
 </section>
@@ -562,19 +627,27 @@ footer p{font-size:12px;color:var(--muted2)}
       <div class="contact-title">Let's build<br/><em>something great</em></div>
       <p class="contact-sub">Open to Data Analyst, BI Developer, and AI/Data Science roles. I move fast, ship clean, and bring AI to the table.</p>
       <a href="mailto:jaykadao99210@gmail.com" class="clink">
-        <div class="clink-icon">✉️</div>
+        <div class="clink-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </div>
         <div class="clink-text"><div class="lbl">Email</div><div class="val">jaykadao99210@gmail.com</div></div>
       </a>
       <a href="https://linkedin.com/in/jaykumar-kadao" target="_blank" class="clink">
-        <div class="clink-icon">💼</div>
+        <div class="clink-icon">
+          <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.65 1.65 0 0 0 0-3.3 1.65 1.65 0 0 0 0 3.3m1.38 9.74v-8.37H5.08v8.37h2.76z"/></svg>
+        </div>
         <div class="clink-text"><div class="lbl">LinkedIn</div><div class="val">linkedin.com/in/jaykumar-kadao</div></div>
       </a>
       <a href="https://github.com/jayzz98" target="_blank" class="clink">
-        <div class="clink-icon">⌥</div>
+        <div class="clink-icon">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        </div>
         <div class="clink-text"><div class="lbl">GitHub</div><div class="val">github.com/jayzz98</div></div>
       </a>
       <a href="tel:+919356724738" class="clink">
-        <div class="clink-icon">📱</div>
+        <div class="clink-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        </div>
         <div class="clink-text"><div class="lbl">Phone</div><div class="val">+91 9356724738</div></div>
       </a>
     </div>
@@ -610,16 +683,6 @@ const obs = new IntersectionObserver(e=>{
   e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('in')});
 },{threshold:0.08});
 document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
-
-// Skill bars
-const sobs = new IntersectionObserver(e=>{
-  e.forEach(el=>{
-    if(el.isIntersecting){
-      el.target.querySelectorAll('.skill-fill').forEach(b=>{b.style.width=b.dataset.w});
-    }
-  });
-},{threshold:0.3});
-document.querySelectorAll('.skills-grid').forEach(el=>sobs.observe(el));
 </script>
 </body>
 </html>
