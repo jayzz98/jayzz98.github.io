@@ -79,23 +79,23 @@ section{padding:100px 48px;max-width:1200px;margin:0 auto}
 .exp-title{font-family:'Bricolage Grotesque',sans-serif;font-size:22px;font-weight:700;margin-bottom:4px}
 .exp-co{font-size:14px;color:var(--accent);font-weight:600}
 .exp-period{font-size:12px;color:var(--muted);background:var(--surface2);border:1px solid var(--border);padding:6px 14px;border-radius:100px;white-space:nowrap}
-.exp-list{list-style:none;display:flex;flex-direction:column;gap:14px}
-.exp-list li{display:flex;gap:12px;font-size:14px;color:var(--muted);line-height:1.65}
-.exp-list li::before{content:'▸';color:var(--accent);flex-shrink:0;margin-top:3px;font-size:11px}
-.exp-list li strong{color:var(--text)}
+.exp-list{list-style:none;display:flex;flex-direction:column;gap:16px}
+.exp-list li{position:relative;padding-left:22px;font-size:14px;color:var(--muted);line-height:1.7}
+.exp-list li::before{content:'▸';position:absolute;left:0;top:0;color:var(--accent);font-size:12px}
+.exp-list li strong{color:var(--text);font-weight:600}
 .skill-chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:24px;padding-top:24px;border-top:1px solid var(--border)}
 .chip{background:var(--surface2);border:1px solid var(--border);color:var(--muted);font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;letter-spacing:.3px}
 .chip.hi{background:rgba(110,231,183,0.08);border-color:rgba(110,231,183,0.25);color:var(--accent)}
 
 /* ── PROJECTS ── */
 /* Featured card */
-.featured-project{background:var(--surface);border:1px solid var(--border);border-radius:24px;overflow:hidden;margin-bottom:24px;display:grid;grid-template-columns:1fr 1fr;min-height:440px;transition:.3s}
+.featured-project{background:var(--surface);border:1px solid var(--border);border-radius:24px;overflow:hidden;margin-bottom:28px;display:grid;grid-template-columns:1.15fr 1fr;align-items:center;transition:.3s}
 .featured-project:hover{border-color:var(--border2);box-shadow:0 24px 80px rgba(0,0,0,0.5)}
-.fp-img{position:relative;overflow:hidden}
-.fp-img img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .5s}
-.featured-project:hover .fp-img img{transform:scale(1.03)}
-.fp-img-overlay{position:absolute;inset:0;background:linear-gradient(to right,transparent 60%,var(--surface));pointer-events:none}
-.fp-body{padding:48px 48px 48px 40px;display:flex;flex-direction:column;justify-content:center}
+.fp-img{position:relative;overflow:hidden;padding:28px;display:flex;align-items:center;justify-content:center}
+.fp-mockup{width:100%;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.12);box-shadow:0 20px 50px rgba(0,0,0,0.65);background:#0a0a0f;transition:transform .4s}
+.featured-project:hover .fp-mockup{transform:translateY(-2px) scale(1.01)}
+.fp-mockup img{width:100%;height:auto;display:block}
+.fp-body{padding:40px 44px;display:flex;flex-direction:column;justify-content:center}
 .fp-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
 .fp-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent)}
 .fp-title{font-family:'Bricolage Grotesque',sans-serif;font-size:28px;font-weight:800;letter-spacing:-1px;margin-bottom:16px;line-height:1.15}
@@ -142,21 +142,21 @@ section{padding:100px 48px;max-width:1200px;margin:0 auto}
 .certs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .cert{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;transition:.2s}
 .cert:hover{border-color:var(--border2)}
-.cert-icon{font-size:24px;margin-bottom:12px}
-.cert-name{font-size:14px;font-weight:600;line-height:1.3;margin-bottom:6px}
-.cert-by{font-size:12px;color:var(--muted)}
-.cert-date{font-size:11px;color:var(--accent);margin-top:8px;font-weight:700}
+.cert-name{font-size:15px;font-weight:700;line-height:1.35;margin-bottom:8px;color:var(--text)}
+.cert-by{font-size:13px;color:var(--muted)}
+.cert-date{font-size:11px;color:var(--accent);margin-top:12px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase}
 
 /* ── CONTACT ── */
 .contact-wrap{background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:64px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 .contact-title{font-family:'Bricolage Grotesque',sans-serif;font-size:42px;font-weight:800;letter-spacing:-2px;line-height:1.05;margin-bottom:16px}
 .contact-title em{font-style:normal;color:var(--accent)}
 .contact-sub{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:36px}
-.clink{display:flex;align-items:center;gap:14px;text-decoration:none;padding:14px 18px;border:1px solid var(--border);border-radius:12px;background:var(--surface2);margin-bottom:10px;transition:.2s}
+.clink, a.clink, a.clink:link, a.clink:visited{display:flex;align-items:center;gap:14px;text-decoration:none;padding:14px 18px;border:1px solid var(--border);border-radius:12px;background:var(--surface2);margin-bottom:10px;transition:.2s;color:var(--text)!important}
 .clink:hover{border-color:var(--accent);transform:translateX(4px)}
-.clink-icon{width:38px;height:38px;border-radius:9px;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
-.clink-text .lbl{font-size:11px;color:var(--muted);font-weight:500}
-.clink-text .val{font-size:13px;font-weight:600}
+.clink-icon{width:38px;height:38px;border-radius:9px;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;color:var(--text)}
+.clink-text .lbl{font-size:11px;color:var(--muted)!important;font-weight:500;text-transform:uppercase;letter-spacing:0.5px}
+.clink-text .val{font-size:13px;font-weight:600;color:#f1f1f3!important;transition:color .2s}
+.clink:hover .clink-text .val{color:var(--accent)!important}
 .fact-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .fact{background:var(--surface2);border:1px solid var(--border);border-radius:14px;padding:20px}
 .fact-num{font-family:'Bricolage Grotesque',sans-serif;font-size:34px;font-weight:800;color:var(--accent);line-height:1;margin-bottom:6px}
@@ -248,9 +248,9 @@ footer p{font-size:12px;color:var(--muted2)}
       <div class="exp-period">Dec 2025 – Present</div>
     </div>
     <ul class="exp-list">
-      <li>Led <strong>SAP BusinessObjects → Power BI migration</strong> for Warner Bros. Discovery — rebuilt 15+ reports and 4 dashboards via DAX authoring, SQL profiling, and row-level reconciliation achieving <strong>zero-defect UAT sign-off</strong> and unblocking a coordinated overseas go-live.</li>
-      <li>Replaced manual reporting for <strong>J&amp;J MedTech</strong> with 2 production Power BI dashboards, then engineered an <strong>LLM-powered Auto Insight Generator</strong> (NVIDIA NIM + LangChain) — cutting client delivery from 3 hours to <strong>under 2 minutes (98% reduction)</strong>.</li>
-      <li>Applied <strong>AI-assisted prototyping</strong> and generative design tools to accelerate dashboard ideation, translating ambiguous briefs into validated visual specs ahead of traditional review timelines.</li>
+      <li>Spearheaded the migration of 15+ enterprise reports and 4 dashboards from SAP BusinessObjects to Power BI for Warner Bros. Discovery — spanning full data model redesign, DAX authoring, and row-level SQL reconciliation. Achieved zero-defect UAT sign-off and enabled a smooth international go-live.</li>
+      <li>Built two production Power BI dashboards for Johnson &amp; Johnson MedTech and then engineered an LLM-powered Insight Generator on top — connecting NVIDIA NIM and LangChain to live data sources. Reduced client report delivery from 3 hours to under 2 minutes, a 98% time saving.</li>
+      <li>Accelerated dashboard ideation cycles using AI-assisted prototyping, consistently converting vague business briefs into validated visual specs and delivering ahead of review deadlines.</li>
     </ul>
     <div class="skill-chips">
       <span class="chip hi">Power BI</span><span class="chip hi">DAX</span><span class="chip hi">LangChain</span><span class="chip hi">NVIDIA NIM</span><span class="chip">SAP BO</span><span class="chip">Power Query</span><span class="chip">SQL Server</span><span class="chip">RLS</span>
@@ -265,9 +265,9 @@ footer p{font-size:12px;color:var(--muted2)}
       <div class="exp-period">Sep 2025 – Dec 2025</div>
     </div>
     <ul class="exp-list">
-      <li>Owned the full reporting pipeline — SQL extraction through stakeholder-approved publication — shipping <strong>10+ dashboards</strong> across Power BI, Tableau, and MicroStrategy.</li>
-      <li>Validated ETL queries across <strong>MySQL and SQL Server</strong>, running EDA on enterprise datasets to surface anomalies pre-release — directly improving output accuracy for downstream reporting.</li>
-      <li>Embedded <strong>AI-powered anomaly-flagging</strong> techniques into EDA workflows, accelerating identification of data irregularities across high-volume datasets and reducing manual inspection cycles.</li>
+      <li>Orchestrated reporting pipelines end-to-end from SQL ingestion to stakeholder presentation, delivering 10+ operational dashboards across Power BI, Tableau, and MicroStrategy.</li>
+      <li>Conducted rigorous Exploratory Data Analysis (EDA) and automated data profiling across MySQL and SQL Server, catching discrepancies upstream before production release.</li>
+      <li>Implemented AI-powered anomaly detection and outlier-flagging routines, accelerating high-volume data auditing and eliminating recurring manual reconciliation cycles.</li>
     </ul>
     <div class="skill-chips">
       <span class="chip hi">Power BI</span><span class="chip hi">Tableau</span><span class="chip hi">MicroStrategy</span><span class="chip">MySQL</span><span class="chip">SQL Server</span><span class="chip">EDA</span><span class="chip">ETL</span>
@@ -282,12 +282,12 @@ footer p{font-size:12px;color:var(--muted2)}
       <div class="exp-period">Jun 2025 – Jul 2025</div>
     </div>
     <ul class="exp-list">
-      <li>Authored SQL scripts (joins, aggregations, subqueries) to pull and transform data from relational databases, feeding <strong>3+ business-facing reports</strong>; resolved query bottlenecks improving accuracy and delivery speed.</li>
-      <li>Leveraged <strong>GitHub Copilot</strong> to accelerate query drafting, minimize syntax errors, and surface optimized join strategies — shortening development cycles for complex multi-table transformations.</li>
-      <li>Produced a <strong>parameterized SQL template library</strong> and extraction best-practices guide, eliminating redundant scripting and establishing a repeatable standard for the team.</li>
+      <li>Authored high-efficiency SQL scripts (multi-table joins, subqueries, window functions) to extract and transform enterprise data supporting mission-critical executive reports.</li>
+      <li>Profiled and resolved complex query bottlenecks, reducing script execution times and substantially improving scheduled reporting reliability.</li>
+      <li>Curated a centralized library of parameterized SQL templates and query design standards, reducing redundant drafting across the development team.</li>
     </ul>
     <div class="skill-chips">
-      <span class="chip hi">SQL</span><span class="chip hi">MySQL</span><span class="chip">Joins &amp; Subqueries</span><span class="chip">Aggregations</span><span class="chip">GitHub Copilot</span>
+      <span class="chip hi">SQL</span><span class="chip hi">MySQL</span><span class="chip">Joins &amp; Subqueries</span><span class="chip">Aggregations</span><span class="chip">Query Optimization</span>
     </div>
   </div>
 </section>
@@ -303,13 +303,20 @@ footer p{font-size:12px;color:var(--muted2)}
   <!-- ★ FEATURED: AI BI COPILOT ★ -->
   <div class="featured-project">
     <div class="fp-img">
-      <img src="assets/ai_insight_hero.png" alt="AI BI Copilot" onerror="this.parentNode.style.background='#1a1a2e';this.style.display='none'"/>
-      <div class="fp-img-overlay"></div>
+      <div class="fp-mockup">
+        <div style="background:#14141c;padding:9px 14px;display:flex;align-items:center;gap:6px;border-bottom:1px solid rgba(255,255,255,0.08);">
+          <span style="width:8px;height:8px;border-radius:50%;background:#ff5f56;display:inline-block"></span>
+          <span style="width:8px;height:8px;border-radius:50%;background:#ffbd2e;display:inline-block"></span>
+          <span style="width:8px;height:8px;border-radius:50%;background:#27c93f;display:inline-block"></span>
+          <span style="font-size:10px;color:rgba(255,255,255,0.4);margin-left:8px;font-family:monospace">aibi-copilot.app</span>
+        </div>
+        <img src="assets/ai_insight_hero.png" alt="AI BI Copilot" onerror="this.parentNode.style.background='#1a1a2e';this.style.display='none'"/>
+      </div>
     </div>
     <div class="fp-body">
       <div class="fp-badge">Featured Project · AutoInsight · Aug 2025</div>
       <div class="fp-title">AI BI Copilot —<br/>AutoInsight Generator</div>
-      <p class="fp-desc">LLM-powered analytics platform using NVIDIA NIM & LangChain across 4 data source types — CSV, SQL Server, MySQL, and live Power BI. Business users ask in plain English and get boardroom-ready insights in seconds. Deployed at J&amp;J MedTech, reducing delivery time from 3 hours to under 2 minutes.</p>
+      <p class="fp-desc">LLM-powered analytics platform integrating NVIDIA NIM & LangChain across 4 data source types — CSV, SQL Server, MySQL, and live Power BI. Non-technical users ask questions in natural language and receive executive-ready insights in seconds. Deployed at J&amp;J MedTech, cutting reporting cycles from 3 hours to under 2 minutes.</p>
       <div class="fp-tools">
         <span class="tool">NVIDIA NIM</span><span class="tool">LangChain</span><span class="tool">Python</span><span class="tool">Streamlit</span><span class="tool">Power BI API</span><span class="tool">SQL Server</span>
       </div>
@@ -320,21 +327,28 @@ footer p{font-size:12px;color:var(--muted2)}
   </div>
 
   <!-- ★ FEATURED: DATA LIE DETECTOR ★ -->
-  <div class="featured-project" style="grid-template-columns:1fr 1fr;direction:rtl">
-    <div class="fp-img" style="direction:ltr">
-      <img src="assets/dld_hero.png" alt="Data Lie Detector" onerror="this.parentNode.style.background='#1a1a2e';this.style.display='none'"/>
-      <div class="fp-img-overlay" style="background:linear-gradient(to left,transparent 60%,var(--surface))"></div>
-    </div>
-    <div class="fp-body" style="direction:ltr;padding:48px 40px 48px 48px">
+  <div class="featured-project" style="direction:ltr">
+    <div class="fp-body" style="padding:40px 44px">
       <div class="fp-badge">Live on Web · Personal Product · May 2026</div>
       <div class="fp-title">Data Lie Detector</div>
-      <p class="fp-desc">Upload any CSV dataset and instantly get AI-powered trust scores, anomaly detection, suspicious pattern analysis, and decision-safety verdicts. 3-tier alert system, 15+ analysis modules, multi-file comparison, and PDF export — all in seconds.</p>
+      <p class="fp-desc">Upload any CSV and instantly receive an automated data integrity diagnostic — trust scores, anomaly flagging, suspicious pattern detection, and decision-safety verdicts. Includes 15+ automated analysis modules, multi-file comparison, and one-click PDF export.</p>
       <div class="fp-tools">
         <span class="tool">Python</span><span class="tool">Streamlit</span><span class="tool">Pandas</span><span class="tool">NumPy</span><span class="tool">ML</span><span class="tool">Vercel</span>
       </div>
       <div class="fp-links">
         <a href="https://data-lie-detector.vercel.app" target="_blank" class="proj-link filled">↗ Live Demo</a>
         <a href="https://github.com/jayzz98/Data-Lie-Detector" target="_blank" class="proj-link">⌥ GitHub</a>
+      </div>
+    </div>
+    <div class="fp-img">
+      <div class="fp-mockup">
+        <div style="background:#14141c;padding:9px 14px;display:flex;align-items:center;gap:6px;border-bottom:1px solid rgba(255,255,255,0.08);">
+          <span style="width:8px;height:8px;border-radius:50%;background:#ff5f56;display:inline-block"></span>
+          <span style="width:8px;height:8px;border-radius:50%;background:#ffbd2e;display:inline-block"></span>
+          <span style="width:8px;height:8px;border-radius:50%;background:#27c93f;display:inline-block"></span>
+          <span style="font-size:10px;color:rgba(255,255,255,0.4);margin-left:8px;font-family:monospace">dataliedetector.vercel.app</span>
+        </div>
+        <img src="assets/dld_hero.png" alt="Data Lie Detector" onerror="this.parentNode.style.background='#1a1a2e';this.style.display='none'"/>
       </div>
     </div>
   </div>
@@ -442,7 +456,9 @@ footer p{font-size:12px;color:var(--muted2)}
 
     <!-- HEALTHCARE -->
     <div class="proj-card">
-      <div class="pc-placeholder"><span style="font-size:48px">🏥</span></div>
+      <div class="pc-img">
+        <img src="assets/healthcare_dashboard.jpg" alt="Healthcare Analytics Dashboard" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'pc-placeholder\'><span>🏥</span></div>'"/>
+      </div>
       <div class="pc-body">
         <div class="pc-type">📊 Analytics · Power BI</div>
         <div class="pc-title">Healthcare Analytics</div>
@@ -515,25 +531,21 @@ footer p{font-size:12px;color:var(--muted2)}
   <div class="section-title">Certifications</div>
   <div class="certs-grid" style="margin-top:40px">
     <div class="cert">
-      <div class="cert-icon">🏆</div>
       <div class="cert-name">Databricks Certified Data Analyst Associate</div>
       <div class="cert-by">Databricks</div>
       <div class="cert-date">Sep 2026</div>
     </div>
     <div class="cert">
-      <div class="cert-icon">🌐</div>
       <div class="cert-name">Data Analytics Essentials</div>
       <div class="cert-by">Cisco Networking Academy</div>
       <div class="cert-date">Jul 2024</div>
     </div>
     <div class="cert">
-      <div class="cert-icon">💙</div>
       <div class="cert-name">Introduction to Data Analyst</div>
       <div class="cert-by">IBM</div>
       <div class="cert-date">Aug 2024</div>
     </div>
     <div class="cert" style="border-color:rgba(110,231,183,0.2);background:rgba(110,231,183,0.03)">
-      <div class="cert-icon">📄</div>
       <div class="cert-name">Published Research Paper</div>
       <div class="cert-by" style="margin-top:4px;font-size:12px;line-height:1.4">"Zinc-Oxide Nanofiber ... Glucose Detection"</div>
       <a href="https://www.researchgate.net/publication/382675555" target="_blank" style="color:var(--accent);font-size:12px;text-decoration:none;margin-top:8px;display:inline-block">→ ResearchGate</a>
