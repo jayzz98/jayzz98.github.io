@@ -202,6 +202,21 @@ section{padding:100px 48px;max-width:1200px;margin:0 auto}
 .cert-by{font-size:13px;color:var(--muted)}
 .cert-date{font-size:11px;color:var(--accent);margin-top:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
 
+/* ── EDUCATION ── */
+.education-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:36px 40px;display:flex;justify-content:space-between;align-items:center;gap:32px;box-shadow:var(--shadow-sm);transition:all .3s cubic-bezier(.22,1,.36,1);margin-top:36px;position:relative;overflow:hidden}
+.education-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent)}
+.education-card:hover{border-color:var(--border2);transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.edu-main{max-width:700px}
+.edu-badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--accent);background:var(--accent-light);padding:4px 12px;border-radius:100px;margin-bottom:12px}
+.edu-degree{font-family:'Bricolage Grotesque',sans-serif;font-size:24px;font-weight:800;letter-spacing:-.6px;color:var(--text);margin-bottom:6px}
+.edu-inst{font-size:14px;color:var(--muted);font-weight:600;margin-bottom:12px}
+.edu-desc{font-size:13px;color:var(--muted);line-height:1.7}
+.edu-meta{display:flex;gap:20px;flex-shrink:0}
+.edu-stat{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:18px 24px;text-align:center;min-width:130px;transition:all .2s}
+.education-card:hover .edu-stat{background:var(--accent-light);border-color:rgba(15,98,254,0.2)}
+.edu-stat-val{font-family:'Bricolage Grotesque',sans-serif;font-size:24px;font-weight:800;color:var(--accent);line-height:1;margin-bottom:4px}
+.edu-stat-lbl{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+
 /* ── CONTACT ── */
 .contact-wrap{background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:64px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;box-shadow:var(--shadow-md)}
 .contact-title{font-family:'Bricolage Grotesque',sans-serif;font-size:42px;font-weight:800;letter-spacing:-2px;line-height:1.05;margin-bottom:16px;color:var(--text)}
@@ -238,6 +253,8 @@ footer p{font-size:12px;color:var(--muted2)}
   .proj-grid{grid-template-columns:1fr}
   .contact-wrap{grid-template-columns:1fr;padding:32px 24px}
   .skills-grid{grid-template-columns:1fr}
+  .education-card{flex-direction:column;align-items:flex-start;padding:28px 24px}
+  .edu-meta{width:100%;justify-content:flex-start}
   .hero-stats{flex-direction:column}
   .stat{border-right:none;border-bottom:1px solid var(--border)}
   footer{padding:20px;flex-direction:column;gap:12px;text-align:center}
@@ -256,6 +273,7 @@ footer p{font-size:12px;color:var(--muted2)}
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
     <a href="#contact" class="nav-hire">Hire Me</a>
   </div>
 </nav>
@@ -635,6 +653,32 @@ footer p{font-size:12px;color:var(--muted2)}
       <div class="cert-name">Published Research Paper</div>
       <div class="cert-by" style="margin-top:4px;font-size:12px;line-height:1.4">"Zinc-Oxide Nanofiber ... Glucose Detection"</div>
       <a href="https://www.researchgate.net/publication/382675555" target="_blank" style="color:var(--accent);font-size:12px;text-decoration:none;margin-top:8px;display:inline-block">→ ResearchGate</a>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- EDUCATION -->
+<section id="education" style="padding-top:60px">
+  <div class="reveal"><div class="eyebrow">Academics</div></div>
+  <div class="reveal stagger-1"><div class="section-title">Education</div></div>
+  <div class="education-card reveal stagger-2">
+    <div class="edu-main">
+      <div class="edu-badge">Bachelor of Technology (B.Tech)</div>
+      <div class="edu-degree">Biomedical Engineering</div>
+      <div class="edu-inst">Shri Ramdeobaba College of Engineering and Management (RCOEM) · Nagpur, India</div>
+      <p class="edu-desc">Core coursework in biomedical signal processing, physiological data modeling, and statistical analytics. Built analytical foundations applied to clinical metrics, healthcare data systems, and published scientific research.</p>
+    </div>
+    <div class="edu-meta">
+      <div class="edu-stat">
+        <div class="edu-stat-val">7.45</div>
+        <div class="edu-stat-lbl">CGPA</div>
+      </div>
+      <div class="edu-stat">
+        <div class="edu-stat-val">2021 – 2025</div>
+        <div class="edu-stat-lbl">Duration</div>
+      </div>
     </div>
   </div>
 </section>
