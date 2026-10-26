@@ -119,7 +119,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .stat-label{font-size:12px;color:var(--muted);margin-top:4px;font-weight:500;letter-spacing:.3px}
 
 /* ── SECTIONS ── */
-section{padding:100px 48px;max-width:1200px;margin:0 auto}
+section{padding:100px 48px;max-width:1200px;margin:0 auto;scroll-margin-top:80px}
 .eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
 .section-title{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(36px,4vw,52px);font-weight:800;letter-spacing:-2px;line-height:1.05;margin-bottom:16px;color:var(--text)}
 .section-sub{font-size:16px;color:var(--muted);max-width:540px;margin-bottom:60px}
@@ -290,6 +290,7 @@ footer p{font-size:12px;color:var(--muted2)}
     </a>
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
+    <a href="#tableau">Tableau</a>
     <a href="#skills">Skills</a>
     <a href="#education">Education</a>
     <a href="#contact" class="nav-hire">Hire Me</a>
@@ -719,6 +720,100 @@ footer p{font-size:12px;color:var(--muted2)}
       </div>
     </div>
 
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- TABLEAU SHOWCASE -->
+<section id="tableau">
+  <div class="reveal"><div class="eyebrow">Visual Analytics · Tableau Public</div></div>
+  <div class="reveal stagger-1"><div class="section-title">Tableau Dashboard Showcase</div></div>
+  <div class="reveal stagger-2"><p class="section-sub">Interactive visual storytelling and enterprise analytics built on Tableau — exploring pharma performance, aviation crisis operations, airport capacity, and retail intelligence.</p></div>
+
+  <div class="featured-project reveal" style="margin-top: 36px; border-color: rgba(233,118,43,0.3); background: linear-gradient(145deg, var(--surface), rgba(233,118,43,0.03));">
+    <div class="fp-img" style="background: linear-gradient(135deg, rgba(233,118,43,0.08), var(--bg2));">
+      <div class="fp-mockup">
+        <div style="background:#f0f0f5;padding:9px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(0,0,0,0.08);">
+          <div style="display:flex;align-items:center;gap:6px;">
+            <span style="width:8px;height:8px;border-radius:50%;background:#ff5f56;display:inline-block"></span>
+            <span style="width:8px;height:8px;border-radius:50%;background:#ffbd2e;display:inline-block"></span>
+            <span style="width:8px;height:8px;border-radius:50%;background:#27c93f;display:inline-block"></span>
+            <span style="font-size:10px;color:rgba(0,0,0,0.5);margin-left:8px;font-family:monospace">public.tableau.com/app/profile/jaykumar.kadao</span>
+          </div>
+          <span style="font-size:10px;font-weight:700;color:#e9762b;text-transform:uppercase;letter-spacing:0.5px;">Tableau Public</span>
+        </div>
+        <div class="carousel-container" data-carousel>
+          <div class="carousel-track">
+            <div class="carousel-slide">
+              <a href="https://public.tableau.com/app/profile/jaykumar.kadao/vizzes" target="_blank" style="display:block;cursor:pointer;">
+                <img src="assets/tableau_pharma.png" alt="Pharma Sales Performance Dashboard - Tableau Public"/>
+              </a>
+            </div>
+            <div class="carousel-slide">
+              <a href="https://public.tableau.com/app/profile/jaykumar.kadao/vizzes" target="_blank" style="display:block;cursor:pointer;">
+                <img src="assets/tableau_indigo.png" alt="IndiGo Flight Crisis Analysis - Tableau Public"/>
+              </a>
+            </div>
+            <div class="carousel-slide">
+              <a href="https://public.tableau.com/app/profile/jaykumar.kadao/vizzes" target="_blank" style="display:block;cursor:pointer;">
+                <img src="assets/tableau_airport.png" alt="Airport Authority Performance - Tableau Public"/>
+              </a>
+            </div>
+            <div class="carousel-slide">
+              <a href="https://public.tableau.com/app/profile/jaykumar.kadao/vizzes" target="_blank" style="display:block;cursor:pointer;">
+                <img src="assets/tableau_superstore.png" alt="Super Store Analytics Dashboard - Tableau Public"/>
+              </a>
+            </div>
+          </div>
+          <button class="carousel-btn prev" aria-label="Previous slide">&#8249;</button>
+          <button class="carousel-btn next" aria-label="Next slide">&#8250;</button>
+          <div class="carousel-dots">
+            <span class="carousel-dot active"></span>
+            <span class="carousel-dot"></span>
+            <span class="carousel-dot"></span>
+            <span class="carousel-dot"></span>
+          </div>
+          <div class="carousel-badge" style="background:rgba(233,118,43,0.95);"><span class="cur-slide">1</span> / 4</div>
+        </div>
+      </div>
+    </div>
+    <div class="fp-body">
+      <div class="fp-badge" style="color:#e9762b;">
+        <span style="background:#e9762b;"></span>Tableau Public Gallery
+      </div>
+      <div class="fp-title">Interactive Visual Analytics &amp; Storytelling</div>
+      <p class="fp-desc">A curated collection of interactive Tableau dashboards demonstrating end-to-end analytical reporting. Highlights include the <strong>Pharma Sales Performance</strong> executive suite, the <strong>IndiGo Flight Crisis Analysis</strong> tracking flight cancellations &amp; market share impacts, and the <strong>Airport Authority Operations</strong> cockpit.</p>
+      
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;">
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:10px 14px;">
+          <div style="font-size:11px;font-weight:700;color:var(--text);margin-bottom:2px;">Pharma Performance</div>
+          <div style="font-size:11px;color:var(--muted);">Product class &amp; margin trends</div>
+        </div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:10px 14px;">
+          <div style="font-size:11px;font-weight:700;color:var(--text);margin-bottom:2px;">Flight Crisis Analysis</div>
+          <div style="font-size:11px;color:var(--muted);">4,200+ flight cancellation audit</div>
+        </div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:10px 14px;">
+          <div style="font-size:11px;font-weight:700;color:var(--text);margin-bottom:2px;">Airport Operations</div>
+          <div style="font-size:11px;color:var(--muted);">Terminal load &amp; delay metrics</div>
+        </div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:10px 14px;">
+          <div style="font-size:11px;font-weight:700;color:var(--text);margin-bottom:2px;">Super Store Retail</div>
+          <div style="font-size:11px;color:var(--muted);">Profitability &amp; discount drivers</div>
+        </div>
+      </div>
+
+      <div class="fp-tools" style="margin-bottom:24px;">
+        <span class="tool">Tableau Desktop</span><span class="tool">Tableau Public</span><span class="tool">LOD Expressions</span><span class="tool">Calculated Fields</span><span class="tool">Data Storytelling</span><span class="tool">Visual KPIs</span>
+      </div>
+
+      <div class="fp-links">
+        <a href="https://public.tableau.com/app/profile/jaykumar.kadao/vizzes" target="_blank" class="proj-link filled" style="background:#e9762b;border-color:#e9762b;box-shadow:0 4px 14px rgba(233,118,43,0.35);">
+          ↗ View All on Tableau Public
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
